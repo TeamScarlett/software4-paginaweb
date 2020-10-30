@@ -14,5 +14,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2"/>
+	<classpathentry kind="lib" path="C:/Users/joelv/Downloads/mysql-connector-java-5.1.15-bin.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
