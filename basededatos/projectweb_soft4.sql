@@ -1,3 +1,4 @@
+CREATE DATABASE projectweb_soft4;
 CREATE TABLE citas (
 idcita INT NOT NULL AUTO_INCREMENT,
 idpaciente VARCHAR (30) NOT NULL,
