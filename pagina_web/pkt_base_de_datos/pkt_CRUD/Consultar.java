@@ -1,5 +1,9 @@
 package pkt_CRUD;
 
-public class Consultar {
+public abstract class Consultar {
 
+		public abstract String BuscarRegistro_ID(String id);
+			
 }
+	
+		
