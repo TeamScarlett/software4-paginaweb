@@ -1,4 +1,4 @@
-package pkt_tablas;
+package pkt_citas;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -6,9 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import java.util.LinkedList;
-
-
-import pkt_clases.Citas;
 
 
 

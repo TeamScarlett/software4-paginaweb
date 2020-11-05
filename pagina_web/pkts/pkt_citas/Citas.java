@@ -1,4 +1,4 @@
-package pkt_clases;
+package pkt_citas;
 
 public class Citas {
 	
