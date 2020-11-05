@@ -1,17 +1,18 @@
 <%@page import="pkt_citas.Tabla_Citas , pkt_clases.Citas , java.util.LinkedList"%>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-   
+  
 <!DOCTYPE html>
+
+  
 <html>
 <head>
-<meta charset="ISO-8859-1">
+
+<link rel="stylesheet" type="text/css" href="pagina_web/WebContent/Estilos/style.css"/>
 <title>Tabla citas</title>
 </head>
 <body>
 
-<table border="1">
+<table border="1" >
   <tr>
    <%-- SE CREAN LOS TITULOS DE LOS ATRIBUTOS DEL OBJETO --%>
     <th>cita</th>
