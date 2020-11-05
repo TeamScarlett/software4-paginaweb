@@ -1,4 +1,4 @@
-package pkt_citas;
+package pkt_tablas;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

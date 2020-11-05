@@ -1,4 +1,4 @@
-<%@page import="pkt_citas.Tabla_Citas , pkt_clases.Citas , java.util.LinkedList"%>
+<%@page import="pkt_tablas.Tabla_Citas, pkt_clases.Citas , java.util.LinkedList"%>
 
   
 <!DOCTYPE html>
