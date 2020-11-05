@@ -13,7 +13,7 @@
 
 <table border="1">
   <tr>
-    
+   <%-- SE CREAN LOS TITULOS DE LOS ATRIBUTOS DEL OBJETO --%>
     <th>cita</th>
     <th>paciente</th>
     <th>fecha</th>
@@ -24,8 +24,12 @@
     <th>usuario</th>
   </tr>
   <%
+ //SE CREA LA LISTA Y SE UTILIZA EL METODO getCitas PARA OBTENER LA LISTA DE CITAS
+ 
   LinkedList<Citas> ListaCitas = Tabla_Citas.getCitas();
   for(int i=0;i<ListaCitas.size();i++){
+	  //MIENTRAS EXISTAN REGISTROS SE OBTENDRAN POR LA POSICION Y EN LA POSICION SE IMPRIMEN LOS ATRIBUTOS
+	  // Y SE PUEDEN TENER INFINIDAD DE ATRIBUTOS Y SERAN DE LA POSICION i
 	  out.println("<tr>");
 	  out.println("<td>"+ListaCitas.get(i).getIdcita()+"</td>");
 	  out.println("<td>"+ListaCitas.get(i).getIdpaciente()+"</td>");

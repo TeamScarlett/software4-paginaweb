@@ -2,6 +2,8 @@ package pkt_clases;
 
 public class Citas {
 	
+	//AQUI SE CREAN LOS ATRIBUTOS DE LA TABLA
+	
 	private int Idcita;
 	private String Idpaciente;
 	private String Fecha;
