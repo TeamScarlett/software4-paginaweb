@@ -21,9 +21,7 @@ public class enlace {
     	}else {
     		return instancia;
     	}
-    		
     }
-    
     
     public Connection EnlacetoDB(){
     	Connection conexion=null;
