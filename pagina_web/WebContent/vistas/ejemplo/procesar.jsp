@@ -29,6 +29,5 @@ Tabla_Citas.AgregarCita(idpaciente, fecha, fechaconsulta, especialidad, idmedico
 %>
 
 
-
 </body>
 </html>

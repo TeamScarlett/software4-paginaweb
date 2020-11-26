@@ -82,9 +82,9 @@ public class Tabla_Citas {
 			statement = conexion.createStatement();
 			statement.executeUpdate(sql);
 			return true;
-		} catch (Exception e) {
+		} catch (Exception e) {                           
 			e.printStackTrace();
 			return false;
 		}
 	}
-}
+}							
