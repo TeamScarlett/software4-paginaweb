@@ -24,10 +24,9 @@ String observacion = request.getParameter("");
 String idusuario = request.getParameter("");
 
 
-//Tabla_Citas.AgregarCita(idpaciente, fecha, fechaconsulta, especialidad, idmedico, observacion, idusuario);
+Tabla_Citas.AgregarCita(idpaciente, fecha, fechaconsulta, especialidad, idmedico, observacion, idusuario);
 
 %>
-
 
 
 </body>
