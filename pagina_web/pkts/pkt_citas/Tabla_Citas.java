@@ -43,6 +43,7 @@ public class Tabla_Citas extends Conexion {
 
 		}
 		return ListaCitas;
+		
 	}
 
 	public static boolean AgregarCita(String idpaciente, String fecha, String fechaconsulta, String especialidad,
