@@ -7,8 +7,8 @@ import java.sql.SQLException;
 
 public class enlace {
 	
-	   // Librería de MySQL
-    public String driver = "com.mysql.jdbc.Driver";
+	   // LibrerÃ­a de MySQL
+    public static String driver = "com.mysql.jdbc.Driver";
 
     // Nombre de la base de datos
     public static String database = "I2BmNBP62R";
@@ -30,9 +30,10 @@ public class enlace {
 	
     public static Connection EnlacetoDB() {
     	try {
+    		Class.forName(driver);
     	return DriverManager.getConnection(url,user,pass);
     	}
-    	catch(SQLException e) {
+    	catch(SQLException | ClassNotFoundException e) {
     		e.printStackTrace();
     	}
 		return null;
