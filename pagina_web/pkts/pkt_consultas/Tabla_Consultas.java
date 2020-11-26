@@ -19,7 +19,7 @@ public class Tabla_Consultas {
 	
 		try {
 			//SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
-
+			statement = conexion.createStatement();
 			ResultSet rs = statement.executeQuery("select * from consulta");
 			//MIENTRAS EXISTA UN SIGUIENTE REGISTRO SE CREA UN OBJETO DE TIPO CITAS
 			while(rs.next()) {
