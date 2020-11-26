@@ -14,4 +14,10 @@ public class Rutas {
 	public static String BootstrapURL = "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css";
 	public static String cdnBoostrapURL  = "https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js";
 	public static String JqueryURL = "https://code.jquery.com/jquery-3.5.1.slim.min.js";
+	
+	
+	//HEADER Y FOOTER URL
+	
+	public static String headerURL = "http://localhost:8080//pagina_web//vistas//header//header.jsp";
+	public static String footerURL = "http://localhost:8080/pagina_web/vistas/footer/footer.jsp";
 }

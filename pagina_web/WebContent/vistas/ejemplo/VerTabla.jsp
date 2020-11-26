@@ -1,5 +1,5 @@
 <%@page
-	import="pkt_citas.Tabla_Citas,pkt_citas.Citas, java.util.LinkedList,utils.Rutas"%>
+	import="pkt_citas.Tabla_Citas,pkt_citas.Citas,java.util.LinkedList,utils.Rutas, pkt_conexion.Conexion, java.sql.Connection"%>
 
 <!DOCTYPE html>
 
@@ -19,7 +19,7 @@
 
 <body>
 
-	<%@ include file="../header.jsp"%>
+
 
 	<div class="container fluid" id="form_contenedor">
 		<div class="card text-center">
@@ -131,7 +131,7 @@
 					</div>
 				</div>
 		</div>
-		<%@ include file="procesar.jsp"%>
+	
 </form>
 
 		<table class="table table-bordered table-hover table-dark">
@@ -154,8 +154,6 @@
 
 				<tbody>
 					<%
-						//SE CREA LA LISTA Y SE UTILIZA EL METODO getCitas PARA OBTENER LA LISTA DE CITAS
-
 					LinkedList<Citas> ListaCitas = Tabla_Citas.getCitas();
 
 					for (int i = 0; i < ListaCitas.size(); i++) {
@@ -180,13 +178,16 @@
 						out.println("</tr>");
 
 					}
-					%>
+%>
+					
+					
+					
 				</tbody>
 			</table>
 
 	
 		</div>
-<%@ include file="../footer.jsp"%>
+
 
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
