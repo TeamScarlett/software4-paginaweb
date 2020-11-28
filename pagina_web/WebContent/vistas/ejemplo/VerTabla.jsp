@@ -43,7 +43,7 @@
 			</div>
 		</div>
 
-<form action="http://localhost:8080/pagina_web/vistas/ejemplo/VerTabla.jsp" method="post">
+<form action="procesar.jsp" method="post" name="cita">
 		<div class="modal" id="form-cita">
 			<div class="modal-dialog">
 					<div class="modal-content">
@@ -55,9 +55,9 @@
 						
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Nombre</span>
+									<span class="input-group-text" id="basic-addon1">Paciente</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Paciente"
+								<input type="text" class="form-control" placeholder="Nombre"
 									aria-label="Username" aria-describedby="basic-addon1"
 									name="idpaciente" required="required">
 									
@@ -66,7 +66,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Fecha</span>
 								</div>
-								<input type="date" class="form-control" placeholder="Paciente"
+								<input type="date" class="form-control" placeholder="Fecha"
 									aria-label="Username" aria-describedby="basic-addon1"
 									name="fecha" required="required">
 									
@@ -76,7 +76,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Fecha consulta</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Paciente"
+								<input type="date" class="form-control" placeholder="Fecha consulta"
 									aria-label="Username" aria-describedby="basic-addon1"
 									name="fechaconsulta" required="required">
 									
@@ -86,7 +86,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Especialidad</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Paciente"
+								<input type="text" class="form-control" placeholder="Especialidad"
 									aria-label="Username" aria-describedby="basic-addon1"
 									name="idespecialidad" required="required">
 									
@@ -96,7 +96,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Medico</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Paciente"
+								<input type="text" class="form-control" placeholder="Nombre del medico"
 									aria-label="Username" aria-describedby="basic-addon1"
 									name="idmedico" required="required">
 									
@@ -106,7 +106,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Observacion</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Paciente"
+								<input type="text" class="form-control" placeholder="Descripcion"
 									aria-label="Username" aria-describedby="basic-addon1"
 									name="observacion" required="required">
 									
@@ -116,9 +116,17 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Usuario</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Paciente"
+								<input type="text" class="form-control" placeholder="Nombre de usuario"
 									aria-label="Username" aria-describedby="basic-addon1"
 									name="idusuario" required="required">
+									
+							</div>
+							
+							<div class="input-group mb-3">
+							
+								<input type="hidden" class="form-control" placeholder=""
+									aria-label="Username" aria-describedby="basic-addon1"
+									name="cita" required="required">
 									
 							</div>
 							
@@ -126,13 +134,15 @@
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
-								
+									
+								<button type="submit" class="btn btn-primary">Save changes</button>
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>s
 		</div>
-		<%@ include file="procesar.jsp"%>
+		
+		
 </form>
 
 		<table class="table table-bordered table-hover table-dark">
