@@ -7,11 +7,9 @@ import java.sql.SQLException;
 
 public class enlace {
 	
-<<<<<<< HEAD
-	   // Librería de MySQL
-=======
-	   // LibrerÃ­a de MySQL
->>>>>>> 6a371fa238c3d4ff743a5b7d8826be0b00b37251
+
+	// Librería de MySQL
+
     public static String driver = "com.mysql.jdbc.Driver";
 
     // Nombre de la base de datos

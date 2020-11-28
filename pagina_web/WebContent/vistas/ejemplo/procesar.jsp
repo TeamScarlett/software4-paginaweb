@@ -14,18 +14,28 @@
 <body>
 
 <%
+String opcion="";
+
+switch(opcion){
+case "cita":
+	String idpaciente = request.getParameter("usuario");;
+	String fecha = request.getParameter("");
+	String fechaconsulta = request.getParameter("");
+	String especialidad = request.getParameter("");
+	String idmedico = request.getParameter("");
+	String observacion = request.getParameter("");
+	String idusuario = request.getParameter("");
 
 
-String idpaciente = request.getParameter("usuario");;
-String fecha = request.getParameter("");
-String fechaconsulta = request.getParameter("");
-String especialidad = request.getParameter("");
-String idmedico = request.getParameter("");
-String observacion = request.getParameter("");
-String idusuario = request.getParameter("");
+	Tabla_Citas.AgregarCita(idpaciente, fecha, fechaconsulta, especialidad, idmedico, observacion, idusuario);
+	break;
+case "consulta":
+	break;
+	
+
+}
 
 
-Tabla_Citas.AgregarCita(idpaciente, fecha, fechaconsulta, especialidad, idmedico, observacion, idusuario);
 
 %>
 

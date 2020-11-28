@@ -66,7 +66,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Fecha</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Paciente"
+								<input type="date" class="form-control" placeholder="Paciente"
 									aria-label="Username" aria-describedby="basic-addon1"
 									name="fecha" required="required">
 									
