@@ -141,7 +141,7 @@
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
 									
-								<button type="submit" class="btn btn-primary">Enviar</button>
+								<button type="submit"  onclick="<%Rutas.opcion="agregar";%> class="btn btn-primary">Enviar</button>
 							</div>
 						</div>
 					</div>
