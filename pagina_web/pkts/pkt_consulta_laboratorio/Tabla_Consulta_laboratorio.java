@@ -26,7 +26,7 @@ public class Tabla_Consulta_laboratorio extends pkt_conexion.enlace{
 						Consulta_laboratorio consulta_laboratorio = new Consulta_laboratorio();
 						consulta_laboratorio.setId(rs.getInt(1));
 						consulta_laboratorio.setIdconsulta(rs.getInt(2));
-						consulta_laboratorio.setIddiagnostico(rs.getInt(3));
+						consulta_laboratorio.setIdreceta(rs.getInt(3));
 						consulta_laboratorio.setOtro(rs.getString(4));
 					
 					
@@ -45,13 +45,13 @@ public class Tabla_Consulta_laboratorio extends pkt_conexion.enlace{
 				return ListaConsulta_laboratorio;
 		
 		}
-	public static boolean AgregarConsultaLaboratorio(int idcita,int idconsulta, int idreceta,String observacion){	
+	public static boolean AgregarConsultaLaboratorio(int idcita,int idconsulta, int idreceta,String otro){	
 
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
 
-		String sql = "INSERT INTO `consulta_laboratorios`(`id`, `idconsulta`, `idreceta`, `otro`) VALUES ('"+idcita+"','"+idconsulta+"','"+idreceta+"','"+observacion+"')";
+		String sql = "INSERT INTO `consulta_laboratorios`(`id`, `idconsulta`, `idreceta`, `otro`) VALUES ('"+idcita+"','"+idconsulta+"','"+idreceta+"','"+otro+"')";
 
 		try {
 			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
