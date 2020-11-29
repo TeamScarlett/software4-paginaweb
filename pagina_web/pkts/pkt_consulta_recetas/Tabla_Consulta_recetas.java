@@ -26,7 +26,7 @@ public class Tabla_Consulta_recetas extends pkt_conexion.enlace{
 				Consulta_recetas consulta_recetas = new Consulta_recetas();
 				consulta_recetas.setId(rs.getInt(1));
 				consulta_recetas.setIdconsulta(rs.getInt(2));
-				consulta_recetas.setIddiagnostico(rs.getInt(3));
+				consulta_recetas.setIdrecetas(rs.getInt(3));
 				consulta_recetas.setOtro(rs.getString(4));
 			
 				ListaConsulta_recetas.add(consulta_recetas);
@@ -61,6 +61,5 @@ public class Tabla_Consulta_recetas extends pkt_conexion.enlace{
 			return false;
 		}
 	}
-
 
 }
