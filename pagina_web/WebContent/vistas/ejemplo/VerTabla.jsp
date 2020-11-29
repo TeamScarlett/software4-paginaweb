@@ -141,7 +141,7 @@
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
 									
-								<button type="submit"  onclick="<%Rutas.opcion="agregar";%> class="btn btn-primary">Enviar</button>
+								<button type="submit" class="btn btn-primary">Enviar</button>
 							</div>
 						</div>
 					</div>
@@ -191,7 +191,7 @@
 						out.println("<td>" + ListaCitas.get(i).getIdUsuario() + "</td>");
 						out.println("<td id=\"editar\">");
 						out.println(
-						"<a href=\"#editEmployeeModal\" class=\"edit\" data-toggle=\"modal\" data-target=\"#form-edit\">"); 
+						"<a href=\"#editl\" class=\"edit\" data-toggle=\"modal\" data-target=\"#form-edit\">"); 
 						out.print("<svg width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" class=\"bi bi-pencil-square\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">");
 						out.print("<path d=\"M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z\"/>");
 						out.print("<path fill-rule=\"evenodd\" d=\"M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z\"/>");
@@ -201,7 +201,7 @@
 						
 						out.println("<td id=\"eliminar\">");
 						out.println(
-								"<a href=\"#editEmployeeModal\" class=\"edit\" data-toggle=\"modal\" data-target=\"#form-edit\">"); 
+								"<a href=\"#del\" class=\"edit\" data-toggle=\"modal\" data-target=\"#form-del\">"); 
 						out.print("<svg width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" class=\"bi bi-journal-x\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">"); 
 						out.print("<path d=\"M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z\"/>");
 						out.print("<path d=\"M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z\"/>");		
@@ -280,7 +280,7 @@
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
 
-								<button type="submit" onclick="<%Rutas.opcion="editar";%>" class="btn btn-primary">Enviar</button>
+								<button type="submit"  class="btn btn-primary">Enviar</button>
 							</div>
 						</div>
 					</div>
@@ -298,8 +298,8 @@
 		<%-- ############################################################## --%>
 
 		<%--  FORMULARIO DE ELIMINAR--%>
-		<form action="Upd_Del.jsp" method="post">
-			<div class="modal" id="form-edit">
+		<form action="procesar.jsp" method="post">
+			<div class="modal" id="form-del">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
