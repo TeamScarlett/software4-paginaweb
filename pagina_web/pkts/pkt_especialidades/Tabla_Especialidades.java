@@ -37,13 +37,10 @@ public class Tabla_Especialidades extends pkt_conexion.enlace{
 		}
 		return ListaEspecialidades;
 		}
-	/*
+	
 	public static boolean AgregarEspecialidades( String id, String descripcion) throws SQLException {
 
-		
-
 		Connection conexion = EnlacetoDB();
-
 		Statement statement = null;
 
 		String sql = "INSERT INTO `especialidades`(`id`, `descripcion`) VALUES ('" + id + "','" +descripcion + "')";
@@ -57,5 +54,28 @@ public class Tabla_Especialidades extends pkt_conexion.enlace{
 			e.printStackTrace();
 			return false;
 		}
+	}
+	public boolean EliminarEspecialidades(int id) {
+		return true;
+	}
+	/*public boolean VerificarEspecilidades(int id) {
+		
+		statement = null;
+		
+		String sql = "SELECT * FROM `especialidades` WHERE `cita` = '"+id+"' ";
+		
+		try {
+		
+		ResultSet rs = statement.executeQuery(sql);
+		
+		if(rs.getInt(0)==id) {
+			return true;
+		}
+		}
+		catch(Exception e) {
+			e.printStackTrace();			
+		}
+		return false;
 	}*/
 }
+

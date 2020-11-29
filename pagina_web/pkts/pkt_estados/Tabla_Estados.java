@@ -47,6 +47,45 @@ public class Tabla_Estados extends pkt_conexion.enlace{
 		//SE RETORNA LA LISTA
 		return ListaEstados;
 	}
+	public static boolean AgregarEstados( int id, String descripcion, int entidad) throws SQLException {
+		
+		Connection conexion = EnlacetoDB();
+		Statement statement = null;
+
+		String sql = "INSERT INTO `estados`(`id`, `descripcion`, `entidad`) VALUES ('" + id + "','" +descripcion + "','" + entidad + "')";
+
+		try {
+			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
+			statement = conexion.createStatement();
+			statement.executeUpdate(sql);
+			return true;
+		} catch (Exception e) {                           
+			e.printStackTrace();
+			return false;
+		}
+	}
+	public boolean EliminarEstodos(int id) {
+		return true;
+	}
+ /*public boolean VerificarEstados(int id) {
+		
+		statement = null;
+		
+		String sql = "SELECT * FROM `estados` WHERE `id` = '"+id+"' ";
+		
+		try {
+		
+		ResultSet rs = statement.executeQuery(sql);
+		
+		if(rs.getInt(0)==id) {
+			return true;
+		}
+		}
+		catch(Exception e) {
+			e.printStackTrace();			
+		}
+		return false;
+	}*/
 	
 }
 

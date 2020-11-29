@@ -57,17 +57,14 @@ public class Tabla_Pacientes extends pkt_conexion.enlace{
 		// SE RETORNA LA LISTA
 		return ListaPacientes;
 	}
-	public static boolean AgregarCita( String idpaciente, String fecha, String fechaconsulta,
-			String especialidad, String idmedico, String observacion, String idusuario) throws SQLException {
-
-		
-
+	public static boolean AgregarPacientes( int id, String nombre, String apellido,
+			String cedula, String celular, String direccion, String email) throws SQLException {
+	
 		Connection conexion = EnlacetoDB();
-
 		Statement statement = null;
 
-		String sql = "INSERT INTO `citas`(`idpaciente`, `fecha`, `fechaconsulta`, `idespecialidad`, `idmedico`, `observacion`, `idusuario`) VALUES ('" + idpaciente + "','" + fecha + "','" + fechaconsulta + "','" + especialidad + "','"
-				+ idmedico + "','" + observacion + "','" + idusuario + "')";
+		String sql = "INSERT INTO `pacientes`(`id`, `nombre`, `apellido`, `cedula`, `celular`, `direccion`, `email`) VALUES ('" + id + "','" + nombre + "','" + apellido +
+				"','" + cedula + "','"+ celular + "','" + direccion + "','" + email + "')";
 
 		try {
 			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
@@ -79,4 +76,27 @@ public class Tabla_Pacientes extends pkt_conexion.enlace{
 			return false;
 		}
 	}
+	public boolean EliminarPacientes(int id) {
+		return true;
+	}
+	
+	/*public boolean VerificarPacientes(int id) {
+		
+		statement = null;
+		
+		String sql = "SELECT * FROM `pacientes` WHERE `id` = '"+id+"' ";
+		
+		try {
+		
+		ResultSet rs = statement.executeQuery(sql);
+		
+		if(rs.getInt(0)==id) {
+			return true;
+		}
+		}
+		catch(Exception e) {
+			e.printStackTrace();			
+		}
+		return false;
+	}*/
 }
