@@ -1,5 +1,4 @@
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%@page
 	import="pkt_citas.Tabla_Citas,pkt_citas.Citas, java.util.LinkedList,utils.Rutas"%>
@@ -163,7 +162,7 @@
 						<th scope="col">Fecha Consulta</th>
 						<th scope="col">Especialidad</th>
 						<th scope="col">Medico</th>
-						<th scope="col">Observación</th>
+						<th scope="col">ObservaciÃ³n</th>
 						<th scope="col">Usuario</th>
 						<th scope="col">Modificar</th>
 						<th scope="col">Eliminar</th>
