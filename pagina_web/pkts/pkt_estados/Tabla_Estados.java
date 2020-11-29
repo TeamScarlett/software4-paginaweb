@@ -9,6 +9,7 @@ import java.util.LinkedList;
 //import pkt_estados.Estados;
 
 public class Tabla_Estados extends pkt_conexion.enlace{
+	
 
 	public static LinkedList<Estados> getEstados() {
 		

@@ -91,39 +91,30 @@ public class Tabla_Citas extends pkt_conexion.enlace {
 			return false;
 		}
 	}
+	public boolean EliminarCita(int idcita) {
+		return true;
+	}
 	
-	public boolean BuscarCita(int idcita,String idpaciente, String fecha, String fechaconsulta,
-			int idespecialidad, String idmedico, String observacion,int idusuario) {
+	public boolean VerificarCita(int idcita) {
 		
 
-		Connection conexion = EnlacetoDB();
-		
 		statement = null;
 		
-		String sql = "SELECT `idcita`, `idpaciente`, `fecha`, `fechaconsulta`, `idespecialidad`, `idmedico`, `observacion`, `idusuario` FROM `citas` WHERE `cita` = '"+idcita+"' ";
+		String sql = "SELECT * FROM `citas` WHERE `cita` = '"+idcita+"' ";
 		
 		try {
 		
 		ResultSet rs = statement.executeQuery(sql);
 		
-		while(rs.next()) {
-			Citas cita = new Citas();
-			cita.setIdcita(rs.getInt(1));
-			cita.setIdpaciente(rs.getString(2));
-			cita.setFecha(rs.getDate(3).toString());
-			cita.setFechaConsulta(rs.getString(4));
-			cita.setIdespecialidad(rs.getInt(5));
-			cita.setIdMedico(rs.getString(6));
-			cita.setObservacion(rs.getString(7));
-			cita.setIdUsuario(rs.getInt(8));
+		if(rs.getInt(0)==idcita) {
+			return true;
 		}
-		return true;
 		}
 		catch(Exception e) {
 			e.printStackTrace();
-			return false;
+			
 		}
-		
+		return false;
 	}
 	
 }

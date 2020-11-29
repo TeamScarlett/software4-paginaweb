@@ -18,8 +18,9 @@ public class Citas{
 	private int idUsuario;
 	
 	
-	
-
+	public Citas() {
+		
+	}
 	public int getIdcita() {
 		return Idcita;
 	}
