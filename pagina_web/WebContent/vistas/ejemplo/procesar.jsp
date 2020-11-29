@@ -3,71 +3,32 @@
 <%@page
 	import="modelos.ModeloAgregar ,utils.Rutas"%>
 	
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
 
 <%
-String idpaciente = request.getParameter("idpaciente");
-String opcion=request.getParameter("cita");
-log(opcion);
-boolean Verificar=false;
-switch(opcion){
-case "cita":
-	int idcita = Integer.valueOf(request.getParameter("idcicta"));
-	String idpaciente2 = request.getParameter("usuario");
+
+switch(Rutas.opcion){
+case "agregar":
+	int idcita = Integer.valueOf(request.getParameter("idcita"));
+	String idpaciente = request.getParameter("idpaciente");
 	String fecha = request.getParameter("fecha");
 	String fechaconsulta = request.getParameter("fechaconsulta");
-	int idespecialidad = Integer.valueOf(request.getParameter(""));
-	String idmedico = request.getParameter("");
-	String observacion = request.getParameter("");
-	int idusuario = Integer.valueOf(request.getParameter(""));
+	int idespecialidad = Integer.valueOf(request.getParameter("idespecialidad"));
+	String idmedico = request.getParameter("idmedico");
+	String observacion = request.getParameter("observacion");
+	int idusuario = Integer.valueOf(request.getParameter("idusuario"));
 
 
 	ModeloAgregar nuevaCita = new ModeloAgregar();
-	Verificar = nuevaCita.AgregarCita(idcita, idpaciente, fecha, fechaconsulta, idespecialidad, idmedico, observacion, idusuario);
-	out.print("Se agrego");
+	boolean Verificar = nuevaCita.AgregarCita(idcita, idpaciente, fecha, fechaconsulta, idespecialidad, idmedico, observacion, idusuario);
+	out.print("opcion");
 	break;
-case "consulta":
+case "editar":
 	
+	out.println("Se ve a editar");
 	break;
-	
-
-}
-if(Verificar){
-	
 }
 
-
-
-
+	
 %>
 
-<%
-session.setMaxInactiveInterval(2);
-%>
 
- <script type="text/javascript">
-var Msg ='<%=session.getAttribute("getAlert")%>';
-    if (Msg != "null") {
- function alertName(){
- alert("Form has been submitted");
- } 
- }
- </script> 
-
-<script type="text/javascript">
-function alertName(){
-alert("Form has been submitted");
-} 
-</script> 
-<script type="text/javascript"> window.onload = alertName; </script>
-
-
-</body>

@@ -4,8 +4,7 @@ public class Recetas {
 	
 	private int id;
 	private String descripcion;
-	
-	
+		
 	public int getId() {
 		return id;
 	}
@@ -18,6 +17,5 @@ public class Recetas {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	
 
 }
