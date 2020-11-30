@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 
-//import pkt_estados.Estados;
+
 
 public class Tabla_Estados extends pkt_conexion.enlace{
 	
@@ -19,22 +19,19 @@ public class Tabla_Estados extends pkt_conexion.enlace{
 		Statement statement = null;
 		
 		try {
-			//SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
+			
 			statement = conexion.createStatement();
 			ResultSet rs = statement.executeQuery("select * from estados");
-			//MIENTRAS EXISTA UN SIGUIENTE REGISTRO SE CREA UN OBJETO DE TIPO CITAS
+			
 			while(rs.next()) {
 			Estados estados = new Estados();
 			estados.setId(rs.getInt(1));
 			estados.setDescripcion(rs.getString(2));
 			estados.setEntidad(rs.getInt(3));
 			
-			
-			//DESPUES DE AGREGAR TODOS LOS ATRIBUTOS A ESTE OBJETO
-			//SE AGREGA A LA LISTA
 			ListaEstados.add(estados);
 			}
-			//SE CIERRAN LAS CONEXIONES
+			
 			rs.close();
 			statement.close();
 			conexion.close();
@@ -44,7 +41,7 @@ public class Tabla_Estados extends pkt_conexion.enlace{
 			e.printStackTrace();
 		}
 		
-		//SE RETORNA LA LISTA
+		
 		return ListaEstados;
 	}
 	public static boolean AgregarEstados( int id, String descripcion, int entidad) throws SQLException {
@@ -55,7 +52,6 @@ public class Tabla_Estados extends pkt_conexion.enlace{
 		String sql = "INSERT INTO `estados`(`id`, `descripcion`, `entidad`) VALUES ('" + id + "','" +descripcion + "','" + entidad + "')";
 
 		try {
-			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
 			statement = conexion.createStatement();
 			statement.executeUpdate(sql);
 			return true;
@@ -67,9 +63,10 @@ public class Tabla_Estados extends pkt_conexion.enlace{
 	public boolean EliminarEstodos(int id) {
 		return true;
 	}
- /*public boolean VerificarEstados(int id) {
+	
+public boolean VerificarEstados(int id) {
 		
-		statement = null;
+		Statement statement = null;
 		
 		String sql = "SELECT * FROM `estados` WHERE `id` = '"+id+"' ";
 		
@@ -85,7 +82,7 @@ public class Tabla_Estados extends pkt_conexion.enlace{
 			e.printStackTrace();			
 		}
 		return false;
-	}*/
+	}
 	
 }
 

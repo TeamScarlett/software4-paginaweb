@@ -25,7 +25,7 @@ public class Tabla_signos_vitales extends pkt_conexion.enlace{
 		try {
 			
 			statement = conexion.createStatement();
-			ResultSet rs = statement.executeQuery("select * from citas");
+			ResultSet rs = statement.executeQuery("select * from signos_vitales");
 			
 
 			while (rs.next()) {
@@ -33,7 +33,6 @@ public class Tabla_signos_vitales extends pkt_conexion.enlace{
 				Signos_vitales.setId(rs.getInt(1));
 				Signos_vitales.setDescripcion(rs.getString(2));
 			
-
 				
 
 				ListaSignos_vitales.add(Signos_vitales);

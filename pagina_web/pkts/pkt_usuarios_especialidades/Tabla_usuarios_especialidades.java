@@ -6,27 +6,24 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 
-//import pkt_citas.Citas;
 
 public class Tabla_usuarios_especialidades extends pkt_conexion.enlace{
 
 	public static LinkedList<Usuarios_especialidades> getUsuarios_especialidades() {
 
-		// SE CREA LA LISTA DE TIPO CITAS
+
 
 		LinkedList<Usuarios_especialidades> ListaUsuarios_especialidades = new LinkedList<Usuarios_especialidades>();
-
-		// SE OBTIENE LA CONEXION
 
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
 
 		try {
-			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
+			
 			statement = conexion.createStatement();
 			ResultSet rs = statement.executeQuery("select * from citas");
-			// MIENTRAS EXISTA UN SIGUIENTE REGISTRO SE CREA UN OBJETO DE TIPO CITAS
+			
 
 			while (rs.next()) {
 				Usuarios_especialidades Usuarios_especialidades = new Usuarios_especialidades();
@@ -34,14 +31,13 @@ public class Tabla_usuarios_especialidades extends pkt_conexion.enlace{
 				Usuarios_especialidades.setIdespecialidad(rs.getInt(2));
 				Usuarios_especialidades.setIdusuario(rs.getInt(3));
 
-				// DESPUES DE AGREGAR TODOS LOS ATRIBUTOS A ESTE OBJETO
-				// SE AGREGA A LA LISTA
+				
 
 				ListaUsuarios_especialidades.add(Usuarios_especialidades);
 
 			}
 
-			// SE CIERRAN LAS CONEXIONES
+			
 			rs.close();
 			statement.close();
 			conexion.close();
@@ -50,7 +46,7 @@ public class Tabla_usuarios_especialidades extends pkt_conexion.enlace{
 			e.printStackTrace();
 		}
 
-		// SE RETORNA LA LISTA
+		
 		return ListaUsuarios_especialidades;
 	}
 	public boolean VerificarUsuario_esp(int id) {

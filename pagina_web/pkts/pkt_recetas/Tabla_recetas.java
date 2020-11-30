@@ -21,7 +21,7 @@ public class Tabla_recetas extends pkt_conexion.enlace{
 		try {
 			
 			statement = conexion.createStatement();
-			ResultSet rs = statement.executeQuery("select * from citas");
+			ResultSet rs = statement.executeQuery("select * from recetas");
 			
 			while (rs.next()) {
 				Recetas Recetas = new Recetas();

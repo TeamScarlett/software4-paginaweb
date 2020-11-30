@@ -10,6 +10,7 @@ String add =request.getParameter("add");
 
 if(add != null){
 	out.println("add");
+	
 }
 String del = request.getParameter("del");
 if(del !=null){

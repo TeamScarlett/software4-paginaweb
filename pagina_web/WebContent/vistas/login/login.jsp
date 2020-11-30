@@ -1,3 +1,7 @@
+
+<%@page
+	import="pkt_tipousuario.*, java.util.LinkedList,utils.Rutas"%>
+	
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,7 +12,7 @@
 <title>Login</title>
 </head>
 <body>
-<%@ include file="header.jsp"%>
+<%@ include file="../header.jsp"%>
 <div class="container">
 <div class="row">
     <div class="col-sm">
@@ -40,6 +44,6 @@
 
 </div>
 
-<%@ include file="footer.jsp"%>
+<%@ include file="../footer.jsp"%>
 </body>
 </html>

@@ -65,9 +65,9 @@
     </div>
     </div>
 </footer>
-    <!--/.footer-->
+ 
 <p class="text-center"> Copyright © Sistema de clinica.<br> All right reserved. </p>
-    <!--/.footer-bottom--> 
+
 
 
 

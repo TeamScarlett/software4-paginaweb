@@ -95,6 +95,7 @@ public class Tabla_Consulta_sintomas extends pkt_conexion.enlace {
 		return false;
 	}
 
+
 	public boolean ActualizarConsultaSintomas(int id, int idconsulta, int idsintoma, String observacion) {
 
 		Connection conexion = EnlacetoDB();
@@ -114,3 +115,6 @@ public class Tabla_Consulta_sintomas extends pkt_conexion.enlace {
 	}
 	
 }
+
+
+

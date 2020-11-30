@@ -25,7 +25,7 @@ public class Tabla_tipousuario extends pkt_conexion.enlace{
 		try {
 			
 			statement = conexion.createStatement();
-			ResultSet rs = statement.executeQuery("select * from citas");
+			ResultSet rs = statement.executeQuery("select * from tipousuario");
 			
 
 			while (rs.next()) {

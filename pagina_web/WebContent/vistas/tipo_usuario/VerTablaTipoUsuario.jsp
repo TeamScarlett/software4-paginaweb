@@ -1,6 +1,8 @@
 
+
+
 <%@page
-	import="pkt_signos_vitales.*, java.util.LinkedList,utils.Rutas"%>
+	import="pkt_tipousuario.*, java.util.LinkedList,utils.Rutas"%>
 
 <!DOCTYPE html>
 
@@ -15,7 +17,7 @@
 <link rel="stylesheet" type="text/css" href="<%=Rutas.cssURL%>" />
 
 
-<title>Tabla Signos vitales</title>
+<title>Tabla tipo usuario</title>
 </head>
 
 <body>
@@ -34,7 +36,7 @@
 							<h2>Signos vitales</h2>
 						</div>
 						<div class="col-sm-6">
-							<a href="#añadirSignoVital" class="btn btn-success"
+							<a href="#añadirTipoUsuario" class="btn btn-success"
 								data-toggle="modal" data-target="#form-add"><i class="material-icons">&#xE147;</i> <span>Agregar</span></a>
 
 						</div>
@@ -50,7 +52,7 @@
 
 				<thead>
 					<tr>
-						<th scope="col">ID Signo vital</th>
+						<th scope="col">ID Tipo usuario</th>
 						<th scope="col">Descripcion</th>
 						<th scope="col">Modificar</th>
 						<th scope="col">Eliminar</th>
@@ -62,14 +64,14 @@
 					<%
 						
 
-					LinkedList<Signos_vitales> ListaSignos_vitales = Tabla_signos_vitales.getSignos_vitales();
+					LinkedList<Tipousuario> ListaTipoUsuario = Tabla_tipousuario.getTipousuario();
 
-					for (int i = 0; i < ListaSignos_vitales.size(); i++) {
+					for (int i = 0; i < ListaTipoUsuario.size(); i++) {
 
 
 						out.println("<tr scope=\"row\"></th>");
-						out.println("<td id=\"idcitaedit\">" + ListaSignos_vitales.get(i).getId() + "</td>");
-						out.println("<td>" + ListaSignos_vitales.get(i).getDescripcion()+ "</td>");
+						out.println("<td id=\"idcitaedit\">" + ListaTipoUsuario.get(i).getId() + "</td>");
+						out.println("<td>" + ListaTipoUsuario.get(i).getDescripcion()+ "</td>");
 						
 						
 						out.println("<td id=\"editar\">");
@@ -110,23 +112,23 @@
 	</div>
 	
 	<%--############################################################################################################## --%>
-<form action="ProcesarConsulta.jsp" method="post" name="sub_add">
+<form action="ProcesarSintomas.jsp" method="post" name="sub_add">
 		<div class="modal" id="form-add">
 			<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h2 class="modal-title">Formulario de Signo vital</h2>
+							<h2 class="modal-title">Formulario de tipo de usuario</h2>
 							<button class="close" type="button" data-dismiss="modal">x</button>
 						</div>
 						<div class="modal-body">
 						
 						<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">ID signo vital</span>
+									<span class="input-group-text" id="basic-addon1">ID tipo usuario</span>
 								</div>
-								<input type="text" class="form-control" placeholder="# de signo vital"
+								<input type="text" class="form-control" placeholder="# de tipo usuario"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="add_signo_vital" required>
+									name="add_tipousuario" required>
 							</div>
 									
 							
@@ -134,7 +136,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Descripción</span>
 								</div>
-								<textarea  class="form-control" placeholder="Explicación del signo vital"
+								<textarea  class="form-control" placeholder="Explicación del tipo de usuario"
 									aria-label="Username" aria-describedby="basic-addon1"
 									name="add_descrip" required> </textarea>
 									
@@ -169,23 +171,23 @@
 <%--############################################################################################################## --%>		
 	
 		<%--  FORMULARIO DE MODIFICAR--%>
-		<form action="ProcesarConsulta.jsp" name="sub_edit" method="post">
+		<form action="ProcesarSintomas.jsp" name="sub_edit" method="post">
 			<div class="modal" id="form-edit">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h2 class="modal-title">Editar Consulta</h2>
+							<h2 class="modal-title">Editar tipo de usuario</h2>
 							<button class="close" type="button" data-dismiss="modal">x</button>
 						</div>
 						<div class="modal-body">
 						
 						<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">ID signo vital</span>
+									<span class="input-group-text" id="basic-addon1">ID tipo usuario</span>
 								</div>
-								<input type="text" readonly class="form-control" placeholder="# de Consulta"
+								<input type="text" readonly class="form-control" placeholder="# de tipo usuario"
 									id="data_edit0" aria-label="Username" aria-describedby="basic-addon1"
-									name="edit_idsignovital" required>
+									name="edit_tipousuario" required>
 							</div>
 
 	
@@ -195,7 +197,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Descripcion</span>
 								</div>
-								<textarea  class="form-control" placeholder="Explicación del signo vital"
+								<textarea  class="form-control" placeholder="Explicación del tipo usuario"
 									id="data_edit1" aria-label="Username" aria-describedby="basic-addon1"
 									name="edit_descrip" required> </textarea>
 									
@@ -235,12 +237,12 @@
 		<%-- ############################################################################################# --%>
 
 		<%--  FORMULARIO DE ELIMINAR--%>
-		<form action="ProcesarConsulta.jsp" method="post" name="sub_del">
+		<form action="ProcesarSintomas.jsp" method="post" name="sub_del">
 			<div class="modal" id="form-del">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h2 class="modal-title">Eliminar consulta</h2>
+							<h2 class="modal-title">Eliminar tipo usuario</h2>
 							<button class="close" type="button" data-dismiss="modal">x</button>
 						</div>
 						<div class="modal-body">
@@ -248,20 +250,20 @@
 							
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Id Consulta</span>
+									<span class="input-group-text" id="basic-addon1">ID tipo usuario </span>
 								</div>
-								<input type="text" class="form-control" placeholder="# de Consulta"
+								<input type="text" class="form-control" placeholder="# de tipo usuario"
 									id="data_del0" readonly aria-label="Username" aria-describedby="basic-addon1"
-									name="del_idsignovital" required>
+									name="del_tipousuario" required>
 							</div>
 
 	
 							
 									<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Paciente</span>
+									<span class="input-group-text" id="basic-addon1">Descripcion</span>
 								</div>
-								<input type="text" readonly class="form-control" placeholder="Nombre del paciente"
+								<input type="text" readonly class="form-control" placeholder="Explicación del tipo usuario"
 									id="data_del1" aria-label="Username" aria-describedby="basic-addon1"
 									name="del_descrip" required>
 							</div>
@@ -304,4 +306,3 @@
 
 </body>
 </html>
-

@@ -406,7 +406,6 @@ function selectRow(){
           rindex  = this.rowIndex;
           console.log(rindex);
           document.getElementById("form_cita_NoCita").value = this.cells[0].innerHTML;
-
           document.getElementById("form_cita_Pname").value = this.cells[1].innerHTML;
           document.getElementById("form_cita_fecha").value = this.cells[2].innerHTML;
           document.getElementById("form_cita_fechaConsulta").value = this.cells[3].innerHTML;

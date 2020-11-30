@@ -6,27 +6,27 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 
-//import pkt_citas.Citas;
+
 
 public class Tabla_usuarios extends pkt_conexion.enlace{
 
 	public static LinkedList<Usuarios> getUsuarios() {
 
-		// SE CREA LA LISTA DE TIPO CITAS
+
 
 		LinkedList<Usuarios> ListaUsuarios = new LinkedList<Usuarios>();
 
-		// SE OBTIENE LA CONEXION
+
 
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
 
 		try {
-			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
+	
 			statement = conexion.createStatement();
 			ResultSet rs = statement.executeQuery("select * from citas");
-			// MIENTRAS EXISTA UN SIGUIENTE REGISTRO SE CREA UN OBJETO DE TIPO CITAS
+	
 
 			while (rs.next()) {
 				Usuarios Usuarios = new Usuarios();
@@ -41,14 +41,13 @@ public class Tabla_usuarios extends pkt_conexion.enlace{
 				Usuarios.setIdtipousuario(rs.getInt(9));
 				Usuarios.setIdestado(rs.getInt(10));
 
-				// DESPUES DE AGREGAR TODOS LOS ATRIBUTOS A ESTE OBJETO
-				// SE AGREGA A LA LISTA
+			
 
 				ListaUsuarios.add(Usuarios);
 
 			}
 
-			// SE CIERRAN LAS CONEXIONES
+			
 			rs.close();
 			statement.close();
 			conexion.close();
@@ -57,7 +56,6 @@ public class Tabla_usuarios extends pkt_conexion.enlace{
 			e.printStackTrace();
 		}
 
-		// SE RETORNA LA LISTA
 		return ListaUsuarios;
 	}
 	public boolean VerificarUsuario(int id) {

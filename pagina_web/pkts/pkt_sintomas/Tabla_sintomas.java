@@ -24,7 +24,7 @@ public class Tabla_sintomas extends pkt_conexion.enlace{
 		try {
 			
 			statement = conexion.createStatement();
-			ResultSet rs = statement.executeQuery("select * from citas");
+			ResultSet rs = statement.executeQuery("select * from sintomas");
 			
 
 			while (rs.next()) {

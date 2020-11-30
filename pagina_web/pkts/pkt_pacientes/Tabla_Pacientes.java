@@ -6,27 +6,27 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 
-//import pkt_citas.Citas;
+
 
 public class Tabla_Pacientes extends pkt_conexion.enlace{
 
 	public static LinkedList<Pacientes> getPacientes() {
 
-		// SE CREA LA LISTA DE TIPO CITAS
+		
 
 		LinkedList<Pacientes> ListaPacientes = new LinkedList<Pacientes>();
 
-		// SE OBTIENE LA CONEXION
+		
 
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
 
 		try {
-			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
+			
 			statement = conexion.createStatement();
-			ResultSet rs = statement.executeQuery("select * from citas");
-			// MIENTRAS EXISTA UN SIGUIENTE REGISTRO SE CREA UN OBJETO DE TIPO CITAS
+			ResultSet rs = statement.executeQuery("select * from pacientes");
+			
 
 			while (rs.next()) {
 				Pacientes pacientes = new Pacientes();
@@ -38,14 +38,13 @@ public class Tabla_Pacientes extends pkt_conexion.enlace{
 				pacientes.setDireccion(rs.getString(6));
 				pacientes.setEmail(rs.getString(7));
 
-				// DESPUES DE AGREGAR TODOS LOS ATRIBUTOS A ESTE OBJETO
-				// SE AGREGA A LA LISTA
+			
 
 				ListaPacientes.add(pacientes);
 
 			}
 
-			// SE CIERRAN LAS CONEXIONES
+			
 			rs.close();
 			statement.close();
 			conexion.close();
@@ -54,10 +53,10 @@ public class Tabla_Pacientes extends pkt_conexion.enlace{
 			e.printStackTrace();
 		}
 
-		// SE RETORNA LA LISTA
+		
 		return ListaPacientes;
 	}
-	public static boolean AgregarPacientes( int id, String nombre, String apellido,
+	public boolean AgregarPacientes( int id, String nombre, String apellido,
 			String cedula, String celular, String direccion, String email) throws SQLException {
 	
 		Connection conexion = EnlacetoDB();
@@ -67,7 +66,7 @@ public class Tabla_Pacientes extends pkt_conexion.enlace{
 				"','" + cedula + "','"+ celular + "','" + direccion + "','" + email + "')";
 
 		try {
-			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
+			
 			statement = conexion.createStatement();
 			statement.executeUpdate(sql);
 			return true;

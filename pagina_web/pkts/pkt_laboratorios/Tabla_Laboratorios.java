@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 
-//import pkt_laboratorios.Laboratorios;
 
 public class Tabla_Laboratorios extends pkt_conexion.enlace{
 	
@@ -39,7 +38,7 @@ public static LinkedList<Laboratorios> getLaboratorios(){
 		}
 		return ListaLaboratorios;
 		}
-public static boolean AgregarEstados( int id, String descripcion) throws SQLException {
+public  boolean AgregarEstados( int id, String descripcion) throws SQLException {
 	
 	Connection conexion = EnlacetoDB();
 	Statement statement = null;
@@ -47,7 +46,6 @@ public static boolean AgregarEstados( int id, String descripcion) throws SQLExce
 	String sql = "INSERT INTO `estados`(`id`, `descripcion`, `entidad`) VALUES ('" + id + "','" +descripcion + "')";
 
 	try {
-		// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
 		statement = conexion.createStatement();
 		statement.executeUpdate(sql);
 		return true;

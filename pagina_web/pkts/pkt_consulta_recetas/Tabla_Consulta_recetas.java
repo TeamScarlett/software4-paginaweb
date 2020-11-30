@@ -43,7 +43,7 @@ public class Tabla_Consulta_recetas extends pkt_conexion.enlace {
 		return ListaConsulta_recetas;
 	}
 
-	public static boolean AgregarConsultaReceta(int id, int idconsulta, int idrecetas, String otro) {
+	public boolean AgregarConsultaReceta(int id, int idconsulta, int idrecetas, String otro) {
 
 		Connection conexion = EnlacetoDB();
 
@@ -53,7 +53,7 @@ public class Tabla_Consulta_recetas extends pkt_conexion.enlace {
 				+ idconsulta + "','" + idrecetas + "','" + otro + "')";
 
 		try {
-			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
+			
 			statement = conexion.createStatement();
 			statement.executeUpdate(sql);
 			return true;
@@ -74,7 +74,6 @@ public class Tabla_Consulta_recetas extends pkt_conexion.enlace {
 			return false;
 		}
 	}
-
 
 	public boolean VerificarConsultaRecetas(int id) {
 
@@ -98,6 +97,7 @@ public class Tabla_Consulta_recetas extends pkt_conexion.enlace {
 	
 	public boolean ActualizarConsultaRecetas(int id, int idconsulta, int idrecetas, String otro) {
 
+
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
@@ -115,3 +115,4 @@ public class Tabla_Consulta_recetas extends pkt_conexion.enlace {
 	}
 	
 }
+

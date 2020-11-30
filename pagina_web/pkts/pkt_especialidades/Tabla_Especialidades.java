@@ -58,13 +58,11 @@ public class Tabla_Especialidades extends pkt_conexion.enlace{
 		}
 	}
 
-	public boolean EliminarEspecialidades(int id) {
-		return true;
-	}
-}
-	/*public boolean VerificarEspecilidades(int id) {
+
+
+public boolean VerificarEspecilidades(int id) {
 		
-		statement = null;
+		Statement statement = null;
 		
 		String sql = "SELECT * FROM `especialidades` WHERE `cita` = '"+id+"' ";
 		
@@ -80,6 +78,6 @@ public class Tabla_Especialidades extends pkt_conexion.enlace{
 			e.printStackTrace();			
 		}
 		return false;
-	}*/
-
+	}
+}
 
