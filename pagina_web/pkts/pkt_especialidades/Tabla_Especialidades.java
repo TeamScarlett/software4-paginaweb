@@ -38,7 +38,9 @@ public class Tabla_Especialidades extends pkt_conexion.enlace{
 		return ListaEspecialidades;
 		}
 	
-	public static boolean AgregarEspecialidades( String id, String descripcion) throws SQLException {
+
+	public boolean AgregarEspecialidades( String id, String descripcion){
+
 
 		Connection conexion = EnlacetoDB();
 		Statement statement = null;
@@ -46,7 +48,7 @@ public class Tabla_Especialidades extends pkt_conexion.enlace{
 		String sql = "INSERT INTO `especialidades`(`id`, `descripcion`) VALUES ('" + id + "','" +descripcion + "')";
 
 		try {
-			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
+			
 			statement = conexion.createStatement();
 			statement.executeUpdate(sql);
 			return true;
@@ -55,9 +57,11 @@ public class Tabla_Especialidades extends pkt_conexion.enlace{
 			return false;
 		}
 	}
+
 	public boolean EliminarEspecialidades(int id) {
 		return true;
 	}
+}
 	/*public boolean VerificarEspecilidades(int id) {
 		
 		statement = null;
@@ -77,5 +81,5 @@ public class Tabla_Especialidades extends pkt_conexion.enlace{
 		}
 		return false;
 	}*/
-}
+
 

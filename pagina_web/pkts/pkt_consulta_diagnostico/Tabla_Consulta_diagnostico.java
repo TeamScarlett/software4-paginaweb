@@ -67,7 +67,42 @@ public class Tabla_Consulta_diagnostico extends pkt_conexion.enlace{
 		}
 	}
 	
-}
+		public boolean EliminarConsultaDiagnostico(int id){	
+		Statement statement = null;
+		String sql = "delete from `consulta_diagnostico` where id='"+id+"')";
+		try {
+			statement.executeUpdate(sql);
+			return true;
+		} catch (Exception e) {                           
+			e.printStackTrace();
+			return false;
+		}
+	}	
+
+public boolean VerificarConsultaDiagnostico(int id) {
+
+		Statement statement = null;
+
+		String sql = "SELECT * FROM `consulta_diagnostico` WHERE `id` = '"+id+"' ";
+
+		try {
+
+		ResultSet rs = statement.executeQuery(sql);
+
+		if(rs.getInt(0)==id) {
+			return true;
+		}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+
+		}
+		return false;
+	}
+} 
+	
+	
+
 	
 	
 	

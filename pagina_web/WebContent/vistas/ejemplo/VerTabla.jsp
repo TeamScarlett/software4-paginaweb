@@ -35,7 +35,7 @@
 							<h2>Citas medicas</h2>
 						</div>
 						<div class="col-sm-6">
-							<a href="#addEmployeeModal" class="btn btn-success"
+							<a href="#añadirCita" class="btn btn-success"
 								data-toggle="modal" data-target="#form-cita"><i class="material-icons">&#xE147;</i> <span>Agregar</span></a>
 
 						</div>
@@ -44,7 +44,7 @@
 			</div>
 		</div>
 
-<form action="procesar.jsp" method="post">
+<form action="procesar.jsp" method="post" name="subadd">
 		<div class="modal" id="form-cita">
 			<div class="modal-dialog">
 					<div class="modal-content">
@@ -133,7 +133,10 @@
 									aria-label="Username" aria-describedby="basic-addon1"
 									name="idusuario" required="required">
 									
+						
+							
 							</div>
+							
 							
 							
 							
@@ -141,8 +144,24 @@
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
 									
+<<<<<<< Updated upstream
 								<button type="submit" class="btn btn-primary">Enviar</button>
+=======
+								<button type="button"   onclick="sub_add()" class="btn btn-primary">Enviar</button>
+>>>>>>> Stashed changes
 							</div>
+							
+							<input type="hidden" id="add" name="add">
+							
+							<script>
+							function sub_add(){
+								add.value= "add";
+						       subadd.submit();
+						   
+						    
+							}
+						
+						</script>
 						</div>
 					</div>
 				</div>
@@ -191,7 +210,9 @@
 						out.println("<td>" + ListaCitas.get(i).getIdUsuario() + "</td>");
 						out.println("<td id=\"editar\">");
 						out.println(
-						"<a href=\"#editl\" class=\"edit\" data-toggle=\"modal\" data-target=\"#form-edit\">"); 
+
+						"<a href=\"#editarRegistro\" class=\"edit\" data-toggle=\"modal\" data-target=\"#form-edit\">"); 
+
 						out.print("<svg width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" class=\"bi bi-pencil-square\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">");
 						out.print("<path d=\"M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z\"/>");
 						out.print("<path fill-rule=\"evenodd\" d=\"M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z\"/>");
@@ -201,7 +222,9 @@
 						
 						out.println("<td id=\"eliminar\">");
 						out.println(
-								"<a href=\"#del\" class=\"edit\" data-toggle=\"modal\" data-target=\"#form-del\">"); 
+
+								"<a href=\"#eliminarRegistro\" class=\"edit\" data-toggle=\"modal\" data-target=\"#form-del\">"); 
+
 						out.print("<svg width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" class=\"bi bi-journal-x\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">"); 
 						out.print("<path d=\"M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z\"/>");
 						out.print("<path d=\"M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z\"/>");		
@@ -219,8 +242,43 @@
 			</table>
 		<%-- ############################################################## --%>
 
+
+
+		<%-- ############################################################## --%>
+<div>
+		<%--  FORMULARIO DE ELIMINAR--%>
+		<form action="procesar.jsp" method="post" >
+			<div class="modal" id="form-del">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h2 class="modal-title">Eliminar cita</h2>
+							<button class="close" type="button" data-dismiss="modal">x</button>
+						</div>
+						<div class="modal-body">
+
+							
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Cancelar</button>
+
+								<input type="submit" >
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+
+		<%-- ############################################################## --%>
+</div>
+
+	</div>		
+	
+	<div class="container">
 		<%--  FORMULARIO DE MODIFICAR--%>
-		<form action="procesar.jsp" method="post">
+		<form action="procesar.jsp" name="sub"   method="post">
 			<div class="modal" id="form-edit">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -273,7 +331,13 @@
 					
 							</div>
 							
+								</div>
 						
+									
+									
+							<div>
+						
+<<<<<<< Updated upstream
 							
 
 							<div class="modal-footer">
@@ -310,27 +374,38 @@
 
 							
 
+=======
+>>>>>>> Stashed changes
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
 
-								<button type="submit" class="btn btn-primary">Enviar</button>
+								<button type="button" id="btn" onclick="subedit();" class="btn btn-primary">Enviar</button>
+								
 							</div>
 						</div>
+						<input type="hidden" id="e" name="edit">
+						
+						<script>
+						function subedit(){
+						e.value= "mod";
+						       sub.submit();
+						   
+						    
+						}
+						
+						</script>
 					</div>
 				</div>
 			</div>
 
-
-
 		</form>
 
 		<%-- ############################################################## --%>
-
-
-	</div>		
+</div>
 		
 <%@ include file="../footer.jsp"%>
+
 <script>
 
 
@@ -355,6 +430,7 @@ function selectRow(){
 
 selectRow();
 </script>
+
 
 		<script src="<%=Rutas.JqueryURL%>"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

@@ -11,27 +11,22 @@ import java.util.LinkedList;
 
 public class Tabla_Citas extends pkt_conexion.enlace {
 
-	private Statement statement;
-
-	// SE CREA UNA FUNCION DE LINKEDLIST DE TIPO CITAS
-
+	
 	public static LinkedList<Citas> getCitas() {
-
-		// SE CREA LA LISTA DE TIPO CITAS
+	
 
 		LinkedList<Citas> ListaCitas = new LinkedList<Citas>();
 
-		// SE OBTIENE LA CONEXION
 
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
 
 		try {
-			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
+			
 			statement = conexion.createStatement();
 			ResultSet rs = statement.executeQuery("select * from citas");
-			// MIENTRAS EXISTA UN SIGUIENTE REGISTRO SE CREA UN OBJETO DE TIPO CITAS
+			
 
 			while (rs.next()) {
 				Citas cita = new Citas();
@@ -44,14 +39,12 @@ public class Tabla_Citas extends pkt_conexion.enlace {
 				cita.setObservacion(rs.getString(7));
 				cita.setIdUsuario(rs.getInt(8));
 
-				// DESPUES DE AGREGAR TODOS LOS ATRIBUTOS A ESTE OBJETO
-				// SE AGREGA A LA LISTA
-
+				
 				ListaCitas.add(cita);
 
 			}
 
-			// SE CIERRAN LAS CONEXIONES
+			
 			rs.close();
 			statement.close();
 			conexion.close();
@@ -62,8 +55,30 @@ public class Tabla_Citas extends pkt_conexion.enlace {
 			e.printStackTrace();
 		}
 
-		// SE RETORNA LA LISTA
+		
 		return ListaCitas;
+	}
+	
+	public boolean VerificarCita(int idcita) {
+		
+
+		Statement statement = null;
+		
+		String sql = "SELECT * FROM `citas` WHERE `idcita` = '"+idcita+"' ";
+		
+		try {
+		
+		ResultSet rs = statement.executeQuery(sql);
+		
+		if(rs.getInt(0)==idcita) {
+			return true;
+		}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		return false;
 	}
 
 	public boolean AgregarCita(int idcita,String idpaciente, String fecha, String fechaconsulta,
@@ -80,41 +95,54 @@ public class Tabla_Citas extends pkt_conexion.enlace {
 	
 
 		try {
-			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
-			statement = conexion.createStatement();
-					
-			statement.executeUpdate(sql);
-			
+		
+			statement = conexion.createStatement();					
+			statement.executeUpdate(sql);	
 			return true;
 		} catch (Exception e) {                           
 			e.printStackTrace();
 			return false;
 		}
 	}
-	public boolean EliminarCita(int idcita) {
-		return true;
+	
+	public boolean ActualizarCita(int idcita,String idpaciente, String fecha, String fechaconsulta,
+			int idespecialidad, String idmedico, String observacion,int idusuario) {
+
+		Connection conexion = EnlacetoDB();
+
+		Statement statement = null;
+
+		String sql = "UPDATE `citas` SET `idpaciente`='"+idpaciente+"',`fecha`='"+fecha+"',`fechaconsulta`='"+fechaconsulta+"',`idespecialidad`='"+idespecialidad+"',`idmedico`='"+idmedico+"',`observacion`='"+observacion+"',`idusuario`='"+idusuario+"' WHERE idcita = '"+idcita+"'";
+	
+
+		try {
+			
+			statement = conexion.createStatement();					
+			statement.executeUpdate(sql);	
+			return true;
+		} catch (Exception e) {                           
+			e.printStackTrace();
+			return false;
+		}
 	}
 	
-	public boolean VerificarCita(int idcita) {
+	
+	
+	
+	public boolean EliminarCita(int idcita) {
 		
-
-		statement = null;
-		
-		String sql = "SELECT * FROM `citas` WHERE `cita` = '"+idcita+"' ";
-		
+		Statement statement = null;
+		String sql = "DELETE from `citas` where idcita='"+idcita+"')";
 		try {
-		
-		ResultSet rs = statement.executeQuery(sql);
-		
-		if(rs.getInt(0)==idcita) {
+			statement.executeUpdate(sql);
 			return true;
-		}
-		}
-		catch(Exception e) {
+		} catch (Exception e) {                           
 			e.printStackTrace();
-			
+			return false;
 		}
-		return false;
-	}
 	
 }
+	
+	
+}
+	

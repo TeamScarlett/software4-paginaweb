@@ -10,18 +10,18 @@ import java.util.LinkedList;
 public class Tabla_Consultas extends pkt_conexion.enlace{
 	
 	public static LinkedList<Consultas> getConsultas() {
-		//SE CREA LA LISTA DE TIPO CITAS
+		
 		LinkedList<Consultas> ListaConsultas = new LinkedList<Consultas>();
-		// SE OBTIENE LA CONEXION 
+		 
 		
 		Connection conexion = EnlacetoDB();
 		Statement statement = null;
 	
 		try {
-			//SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
+			
 			statement = conexion.createStatement();
 			ResultSet rs = statement.executeQuery("select * from consulta");
-			//MIENTRAS EXISTA UN SIGUIENTE REGISTRO SE CREA UN OBJETO DE TIPO CITAS
+			
 			while(rs.next()) {
 			Consultas consulta = new Consultas();
 			consulta.setIdconsulta(rs.getInt(1));
@@ -30,11 +30,10 @@ public class Tabla_Consultas extends pkt_conexion.enlace{
 			consulta.setMedico(rs.getString(4));
 			consulta.setObservacion(rs.getString(5));
 			
-			//DESPUES DE AGREGAR TODOS LOS ATRIBUTOS A ESTE OBJETO
-			//SE AGREGA A LA LISTA
+			
 			ListaConsultas.add(consulta);
 			}
-			//SE CIERRAN LAS CONEXIONES
+			
 			rs.close();
 			statement.close();
 			conexion.close();
@@ -44,9 +43,32 @@ public class Tabla_Consultas extends pkt_conexion.enlace{
 			e.printStackTrace();
 		}
 		
-		//SE RETORNA LA LISTA
+		
 		return ListaConsultas;
 	}
+	
+	public boolean VerificarConsulta(int idconsulta) {
+		
+
+		Statement statement = null;
+		
+		String sql = "SELECT * FROM `consulta` WHERE `idconsulta` = '"+idconsulta+"' ";
+		
+		try {
+		
+		ResultSet rs = statement.executeQuery(sql);
+		
+		if(rs.getInt(0)==idconsulta) {
+			return true;
+		}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		return false;
+	}
+	
 	public boolean AgregarConsulta(int idconsulta,String paciente,String fecha,String medico,String observacion){	
 
 		Connection conexion = EnlacetoDB();
@@ -56,7 +78,7 @@ public class Tabla_Consultas extends pkt_conexion.enlace{
 		String sql = "INSERT INTO `consulta`(`idconsulta`, `paciente`, `fecha`, `medico`, `observacion`) VALUES ('"+idconsulta+"','"+paciente+"','"+fecha+"','"+medico+"','"+observacion+"')";
 
 		try {
-			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
+		
 			statement = conexion.createStatement();
 			statement.executeUpdate(sql);
 			return true;
@@ -65,5 +87,45 @@ public class Tabla_Consultas extends pkt_conexion.enlace{
 			return false;
 		}
 	}
+	
+
+	
+	public boolean ActualizarConsulta(int idconsulta,String paciente,String fecha,String medico,String observacion) {
+
+		Connection conexion = EnlacetoDB();
+
+		Statement statement = null;
+
+		String sql = "UPDATE `consulta` SET `idconsulta`='"+idconsulta+"',`paciente`='"+paciente+"',`fecha`='"+fecha+"',`idmedico`='"+medico+"',`observacion`='"+observacion+"', WHERE idconsulta = '"+idconsulta+"'";
+	
+
+		try {
+			
+			statement = conexion.createStatement();					
+			statement.executeUpdate(sql);	
+			return true;
+		} catch (Exception e) {                           
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	
+	
+	
+	public boolean EliminarConsulta(int idconsulta) {
+		
+		Statement statement = null;
+		String sql = "DELETE  from `consulta` where idconsulta='"+idconsulta+"')";
+		try {
+			statement.executeUpdate(sql);
+			return true;
+		} catch (Exception e) {                           
+			e.printStackTrace();
+			return false;
+		}
+	
+}
+
 
 }

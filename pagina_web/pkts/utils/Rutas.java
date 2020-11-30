@@ -20,5 +20,7 @@ public class Rutas {
 	public static String Footer = "";
 	
 	
-	public static String opcion;
+	public static boolean edit=false;
+	public static boolean add=false;
+	public static boolean del=false;
 }

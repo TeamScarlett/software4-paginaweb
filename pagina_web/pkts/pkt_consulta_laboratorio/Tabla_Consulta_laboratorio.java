@@ -45,25 +45,60 @@ public class Tabla_Consulta_laboratorio extends pkt_conexion.enlace{
 				return ListaConsulta_laboratorio;
 		
 		}
-	public static boolean AgregarConsultaLaboratorio(int idcita,int idconsulta, int idreceta,String otro){	
+	
+
+	public static boolean AgregarConsultaLaboratorio(int idcita, int idconsulta, int idreceta, String observacion) {
+
 
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
 
-		String sql = "INSERT INTO `consulta_laboratorios`(`id`, `idconsulta`, `idreceta`, `otro`) VALUES ('"+idcita+"','"+idconsulta+"','"+idreceta+"','"+otro+"')";
+
+		String sql = "INSERT INTO `consulta_laboratorios`(`id`, `idconsulta`, `idreceta`, `otro`) VALUES ('" + idcita
+				+ "','" + idconsulta + "','" + idreceta + "','" + observacion + "')";
 
 		try {
 			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
 			statement = conexion.createStatement();
 			statement.executeUpdate(sql);
 			return true;
-		} catch (Exception e) {                           
+		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
 	}
 
+	public boolean EliminarConsultaLaboratorios(int id) {
+		Statement statement = null;
+		String sql = "delete from `consulta_laboratorios` where id='" + id + "')";
+		try {
+			statement.executeUpdate(sql);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 
+	public boolean VerificarConsultaLaboratorios(int id) {
 
+		Statement statement = null;
+
+		String sql = "SELECT * FROM `consulta_laboratorios` WHERE `id` = '" + id + "' ";
+
+		try {
+
+			ResultSet rs = statement.executeQuery(sql);
+
+			if (rs.getInt(0) == id) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
+		return false;
+	}
 }
+
