@@ -144,11 +144,11 @@
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
 									
-<<<<<<< Updated upstream
+
 								<button type="submit" class="btn btn-primary">Enviar</button>
-=======
+
 								<button type="button"   onclick="sub_add()" class="btn btn-primary">Enviar</button>
->>>>>>> Stashed changes
+
 							</div>
 							
 							<input type="hidden" id="add" name="add">
