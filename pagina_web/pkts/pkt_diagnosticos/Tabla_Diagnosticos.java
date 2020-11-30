@@ -92,7 +92,7 @@ public class Tabla_Diagnosticos extends pkt_conexion.enlace {
 		return false;
 	}
 	
-	public boolean ActualizarDiagnostico(int idcita,String id, String descripcion) {
+	public boolean ActualizarDiagnostico(int id, String descripcion) {
 
 		Connection conexion = EnlacetoDB();
 

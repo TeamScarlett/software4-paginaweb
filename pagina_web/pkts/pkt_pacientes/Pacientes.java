@@ -9,6 +9,7 @@ public class Pacientes {
 	private String celular;
 	private String direccion;
 	private String email;
+	private String pass;
 	
 	public int getId() {
 		return id;
@@ -51,6 +52,12 @@ public class Pacientes {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getPass() {
+		return pass;
+	}
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 	
 }

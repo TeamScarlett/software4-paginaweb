@@ -1,8 +1,6 @@
 
 
-<%@page import="jdk.nashorn.internal.runtime.Debug"%>
-<%@page
-	import="modelos.ModeloAgregar ,utils.Rutas"%>
+<%@page import="Modelo.ModeloCitas"%>
 	
 
 <%

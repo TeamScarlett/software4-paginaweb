@@ -57,7 +57,7 @@ public class Tabla_Consulta_diagnostico extends pkt_conexion.enlace {
 
 
 		try {
-			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
+			
 			statement = conexion.createStatement();
 			statement.executeUpdate(sql);
 			return true;

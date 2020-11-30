@@ -38,12 +38,12 @@ public static LinkedList<Laboratorios> getLaboratorios(){
 		}
 		return ListaLaboratorios;
 		}
-public  boolean AgregarEstados( int id, String descripcion) throws SQLException {
+public  boolean AgregarLaboratorio( int id, String descripcion) {
 	
 	Connection conexion = EnlacetoDB();
 	Statement statement = null;
 
-	String sql = "INSERT INTO `estados`(`id`, `descripcion`, `entidad`) VALUES ('" + id + "','" +descripcion + "')";
+	String sql = "INSERT INTO `laboratorios`(`id`, `descripcion`, `entidad`) VALUES ('" + id + "','" +descripcion + "')";
 
 	try {
 		statement = conexion.createStatement();
@@ -57,9 +57,9 @@ public  boolean AgregarEstados( int id, String descripcion) throws SQLException 
 public boolean EliminarLaboratorios(int id) {
 	return true;
 }
-	/*public boolean VerificarLaboratorios(int id) {
+	public boolean VerificarLaboratorios(int id) {
 	
-	statement = null;
+	Statement statement = null;
 	
 	String sql = "SELECT * FROM `laboratorios` WHERE `id` = '"+id+"' ";
 	
@@ -74,5 +74,6 @@ public boolean EliminarLaboratorios(int id) {
 		e.printStackTrace();			
 	}
 	return false;
-	}*/
+	
+}
 }

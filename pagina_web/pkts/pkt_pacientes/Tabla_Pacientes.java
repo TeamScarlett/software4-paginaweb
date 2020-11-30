@@ -31,12 +31,13 @@ public class Tabla_Pacientes extends pkt_conexion.enlace{
 			while (rs.next()) {
 				Pacientes pacientes = new Pacientes();
 				pacientes.setId(rs.getInt(1));
-				pacientes.setNombre(rs.getString(2));
-				pacientes.setApellido(rs.getString(3));
-				pacientes.setCedula(rs.getString(4));
-				pacientes.setCelular(rs.getString(5));
-				pacientes.setDireccion(rs.getString(6));
+				pacientes.setCedula(rs.getString(2));
+				pacientes.setNombre(rs.getString(3));
+				pacientes.setApellido(rs.getString(4));
+				pacientes.setDireccion(rs.getString(5));
 				pacientes.setEmail(rs.getString(7));
+				pacientes.setPass(rs.getString(8));
+				pacientes.setCelular(rs.getString(9));
 
 			
 
@@ -56,14 +57,13 @@ public class Tabla_Pacientes extends pkt_conexion.enlace{
 		
 		return ListaPacientes;
 	}
-	public boolean AgregarPacientes( int id, String nombre, String apellido,
-			String cedula, String celular, String direccion, String email) throws SQLException {
+	public boolean AgregarPacientes(int id,String cedula,String nombre,String apellido,String direccion,String email,String password,String celular){
 	
 		Connection conexion = EnlacetoDB();
 		Statement statement = null;
 
-		String sql = "INSERT INTO `pacientes`(`id`, `nombre`, `apellido`, `cedula`, `celular`, `direccion`, `email`) VALUES ('" + id + "','" + nombre + "','" + apellido +
-				"','" + cedula + "','"+ celular + "','" + direccion + "','" + email + "')";
+		String sql = "INSERT INTO `pacientes`(`id`, `cedula`, `nombre`, `apellido`, `direccion`, `email`, `PASSWORD`, `celular`) VALUES ('" + id + "','"+cedula+"','" + nombre + "','" + apellido +
+				"','"+ direccion + "','" + email + "','"+password+"','" + celular + "')";
 
 		try {
 			
@@ -79,9 +79,9 @@ public class Tabla_Pacientes extends pkt_conexion.enlace{
 		return true;
 	}
 	
-	/*public boolean VerificarPacientes(int id) {
+	public boolean VerificarPacientes(int id) {
 		
-		statement = null;
+		Statement statement = null;
 		
 		String sql = "SELECT * FROM `pacientes` WHERE `id` = '"+id+"' ";
 		
@@ -97,5 +97,6 @@ public class Tabla_Pacientes extends pkt_conexion.enlace{
 			e.printStackTrace();			
 		}
 		return false;
-	}*/
+	
+}
 }

@@ -39,7 +39,7 @@ public class Tabla_Especialidades extends pkt_conexion.enlace{
 		}
 	
 
-	public boolean AgregarEspecialidades( String id, String descripcion){
+	public boolean AgregarEspecialidades(int id, String descripcion){
 
 
 		Connection conexion = EnlacetoDB();

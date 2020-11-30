@@ -56,7 +56,6 @@ public class Tabla_Consulta_laboratorio extends pkt_conexion.enlace {
 		String sql = "INSERT INTO `consulta_laboratorios`(`id`, `idconsulta`, `idreceta`, `otro`) VALUES ('" + id+ "','" + idconsulta + "','" + idreceta + "','" + observacion + "')";
 
 		try {
-			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
 			statement = conexion.createStatement();
 			statement.executeUpdate(sql);
 			return true;

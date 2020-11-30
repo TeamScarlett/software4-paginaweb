@@ -44,7 +44,7 @@ public class Tabla_Estados extends pkt_conexion.enlace{
 		
 		return ListaEstados;
 	}
-	public static boolean AgregarEstados( int id, String descripcion, int entidad) throws SQLException {
+	public boolean AgregarEstados( int id, String descripcion, int entidad) {
 		
 		Connection conexion = EnlacetoDB();
 		Statement statement = null;

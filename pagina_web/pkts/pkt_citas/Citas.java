@@ -2,12 +2,6 @@ package pkt_citas;
 
 public class Citas{
 	
-	
-
-	// AQUI SE CREAN LOS ATRIBUTOS DE LA 
-	
-	
-
 	private int Idcita;
 	private String Idpaciente;
 	private String Fecha;

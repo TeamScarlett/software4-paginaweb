@@ -19,8 +19,4 @@ public class Rutas {
 	public static String Header = "http://localhost:8080/pagina_web/vistas/header.jsp";
 	public static String Footer = "";
 	
-	
-	public static boolean edit=false;
-	public static boolean add=false;
-	public static boolean del=false;
 }
