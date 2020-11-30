@@ -95,6 +95,23 @@ public class Tabla_Consulta_recetas extends pkt_conexion.enlace {
 		}
 		return false;
 	}
+	
+	public boolean ActualizarConsultaRecetas(int id, int idconsulta, int idrecetas, String otro) {
+
+		Connection conexion = EnlacetoDB();
+
+		Statement statement = null;
+
+		String sql = "UPDATE `consulta_recetas` SET `id`='"+id+"',`descripcion`='"+idconsulta+"',`idrecetas`='"+idrecetas+"', `otro`='"+otro+"' WHERE id = '"+id+"'";
+		
+		try {	
+			statement = conexion.createStatement();					
+			statement.executeUpdate(sql);	
+			return true;
+		} catch (Exception e) {                           
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
 }
-
-

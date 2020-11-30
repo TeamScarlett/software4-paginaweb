@@ -47,7 +47,7 @@ public class Tabla_Consulta_laboratorio extends pkt_conexion.enlace{
 		}
 	
 
-	public static boolean AgregarConsultaLaboratorio(int idcita, int idconsulta, int idreceta, String observacion) {
+	public static boolean AgregarConsultaLaboratorio(int id, int idconsulta, int idreceta, String observacion) {
 
 
 		Connection conexion = EnlacetoDB();
@@ -55,7 +55,7 @@ public class Tabla_Consulta_laboratorio extends pkt_conexion.enlace{
 		Statement statement = null;
 
 
-		String sql = "INSERT INTO `consulta_laboratorios`(`id`, `idconsulta`, `idreceta`, `otro`) VALUES ('" + idcita
+		String sql = "INSERT INTO `consulta_laboratorios`(`id`, `idconsulta`, `idreceta`, `otro`) VALUES ('" + id
 				+ "','" + idconsulta + "','" + idreceta + "','" + observacion + "')";
 
 		try {
@@ -100,5 +100,23 @@ public class Tabla_Consulta_laboratorio extends pkt_conexion.enlace{
 		}
 		return false;
 	}
-}
+	
+	public boolean ActualizarConsultaLaboratorios(int id, int idconsulta, int idreceta, String observacion) {
 
+		Connection conexion = EnlacetoDB();
+
+		Statement statement = null;
+
+		String sql = "UPDATE `consulta_laboratorios` SET `id`='"+id+"',`descripcion`='"+idconsulta+"',`idreceta`='"+idreceta+"', `observacion`='"+observacion+"' WHERE id = '"+id+"'";
+		
+		try {	
+			statement = conexion.createStatement();					
+			statement.executeUpdate(sql);	
+			return true;
+		} catch (Exception e) {                           
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+}

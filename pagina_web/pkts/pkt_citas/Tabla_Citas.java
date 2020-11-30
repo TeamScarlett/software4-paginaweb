@@ -126,9 +126,6 @@ public class Tabla_Citas extends pkt_conexion.enlace {
 		}
 	}
 	
-	
-	
-	
 	public boolean EliminarCita(int idcita) {
 		
 		Statement statement = null;
@@ -142,7 +139,5 @@ public class Tabla_Citas extends pkt_conexion.enlace {
 		}
 	
 }
-	
-	
+
 }
-	

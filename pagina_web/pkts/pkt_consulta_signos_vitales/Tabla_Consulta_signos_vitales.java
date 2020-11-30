@@ -95,7 +95,22 @@ public class Tabla_Consulta_signos_vitales extends pkt_conexion.enlace {
 		return false;
 	}
 
+	public boolean ActualizarConsultaSignosVitales(int id, int idconsulta, int idsignovital, String valor) {
+
+		Connection conexion = EnlacetoDB();
+
+		Statement statement = null;
+
+		String sql = "UPDATE `consulta_signos_vitales` SET `id`='"+id+"',`descripcion`='"+idconsulta+"',`idsignovital`='"+idsignovital+"', `valor`='"+valor+"' WHERE id = '"+id+"'";
+		
+		try {	
+			statement = conexion.createStatement();					
+			statement.executeUpdate(sql);	
+			return true;
+		} catch (Exception e) {                           
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
 }
-
-
-

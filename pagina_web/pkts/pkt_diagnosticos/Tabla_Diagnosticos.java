@@ -91,5 +91,23 @@ public class Tabla_Diagnosticos extends pkt_conexion.enlace {
 		}
 		return false;
 	}
+	
+	public boolean ActualizarDiagnostico(int idcita,String id, String descripcion) {
 
+		Connection conexion = EnlacetoDB();
+
+		Statement statement = null;
+
+		String sql = "UPDATE `diagnosticos` SET `id`='"+id+"',`descripcion`='"+descripcion+"' WHERE id = '"+id+"'";
+		
+		try {	
+			statement = conexion.createStatement();					
+			statement.executeUpdate(sql);	
+			return true;
+		} catch (Exception e) {                           
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
 }

@@ -48,13 +48,13 @@ public class Tabla_Consulta_diagnostico extends pkt_conexion.enlace{
 		return ListaConsulta_diagnostico;
 	}
 	
-	public static boolean AgregarConsultaDiagnostico(int idcita,int idconsulta, int iddiagnostico,String observacion){	
+	public static boolean AgregarConsultaDiagnostico(int id,int idconsulta, int iddiagnostico,String observacion){	
 
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
 
-		String sql = "INSERT INTO `consulta_diagnostico`(`id`, `idconsulta`, `iddiagnostico`, `observacion`) VALUES ('"+idcita +"','"+idconsulta+"','"+iddiagnostico+"','"+observacion+")";
+		String sql = "INSERT INTO `consulta_diagnostico`(`id`, `idconsulta`, `iddiagnostico`, `observacion`) VALUES ('"+id +"','"+idconsulta+"','"+iddiagnostico+"','"+observacion+")";
 
 		try {
 			// SE REALIZA LA CONSULTA PARA OBTENER TODOS LOS DATOS DE LA DB
@@ -99,6 +99,24 @@ public boolean VerificarConsultaDiagnostico(int id) {
 		}
 		return false;
 	}
+
+public boolean ActualizarConsultaDiagnosticos(int id, int idconsulta, int iddiagnostico, String observacion) {
+
+	Connection conexion = EnlacetoDB();
+
+	Statement statement = null;
+
+	String sql = "UPDATE `consulta_diagnostico` SET `id`='"+id+"',`descripcion`='"+idconsulta+"',`iddiagnostico`='"+iddiagnostico+"', `observacion`='"+observacion+"' WHERE id = '"+id+"'";
+	
+	try {	
+		statement = conexion.createStatement();					
+		statement.executeUpdate(sql);	
+		return true;
+	} catch (Exception e) {                           
+		e.printStackTrace();
+		return false;
+	}
+}
 } 
 	
 	

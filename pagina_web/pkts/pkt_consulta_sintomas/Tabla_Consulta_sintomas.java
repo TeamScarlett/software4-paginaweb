@@ -95,5 +95,22 @@ public class Tabla_Consulta_sintomas extends pkt_conexion.enlace {
 		return false;
 	}
 
-}
+	public boolean ActualizarConsultaSintomas(int id, int idconsulta, int idsintoma, String observacion) {
 
+		Connection conexion = EnlacetoDB();
+
+		Statement statement = null;
+
+		String sql = "UPDATE `consulta_sintomas` SET `id`='"+id+"',`descripcion`='"+idconsulta+"',`idsintoma`='"+idsintoma+"', `observacion`='"+observacion+"' WHERE id = '"+id+"'";
+		
+		try {	
+			statement = conexion.createStatement();					
+			statement.executeUpdate(sql);	
+			return true;
+		} catch (Exception e) {                           
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+}
