@@ -16,11 +16,11 @@ public class Usuarios {
 	
 	private String password;
 	
-	private String cedular;
+	private String celular;
 	
 	private int idtipousuario;
 	
-	private int idusuario;
+	private int idestado;
 	
 	
 	public int getId() {
@@ -65,11 +65,11 @@ public class Usuarios {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getCedular() {
-		return cedular;
+	public String getCelular() {
+		return celular;
 	}
-	public void setCedular(String cedular) {
-		this.cedular = cedular;
+	public void setCelular(String celular) {
+		this.celular = celular;
 	}
 	public int getIdtipousuario() {
 		return idtipousuario;
@@ -77,11 +77,11 @@ public class Usuarios {
 	public void setIdtipousuario(int idtipousuario) {
 		this.idtipousuario = idtipousuario;
 	}
-	public int getIdusuario() {
-		return idusuario;
+	public int getIdestado() {
+		return idestado;
 	}
-	public void setIdusuario(int idusuario) {
-		this.idusuario = idusuario;
+	public void setIdestado(int idestado) {
+		this.idestado = idestado;
 	}
 
 }
