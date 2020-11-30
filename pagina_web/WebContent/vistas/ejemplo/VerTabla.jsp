@@ -44,7 +44,9 @@
 			</div>
 		</div>
 
-<form action="procesar.jsp" method="post" name="subadd">
+
+<%--############################################################################################################## --%>
+<form action="procesar.jsp" method="post" name="sub_add">
 		<div class="modal" id="form-cita">
 			<div class="modal-dialog">
 					<div class="modal-content">
@@ -101,7 +103,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Especialidad"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="idespecialidad" required="required">
+									name="add_idespecialidad" required="required">
 									
 							</div>
 							
@@ -143,22 +145,19 @@
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
-									
+															
 
-								<button type="submit" class="btn btn-primary">Enviar</button>
-
-								<button type="button"   onclick="sub_add()" class="btn btn-primary">Enviar</button>
+								<button type="button"   onclick="form_add();" class="btn btn-primary">Enviar</button>
 
 							</div>
 							
 							<input type="hidden" id="add" name="add">
 							
 							<script>
-							function sub_add(){
+							function form_add(){
 								add.value= "add";
-						       subadd.submit();
-						   
-						    
+						       sub_add.submit();
+
 							}
 						
 						</script>
@@ -169,6 +168,8 @@
 		
 
 </form>
+
+<%--############################################################################################################## --%>
 		<table id="listado" class="table table-bordered table-hover table-dark">
 
 
@@ -208,6 +209,7 @@
 						out.println("<td>" + ListaCitas.get(i).getIdMedico() + "</td>");
 						out.println("<td>" + ListaCitas.get(i).getObservacion() + "</td>");
 						out.println("<td>" + ListaCitas.get(i).getIdUsuario() + "</td>");
+						
 						out.println("<td id=\"editar\">");
 						out.println(
 
@@ -243,42 +245,11 @@
 		<%-- ############################################################## --%>
 
 
-
-		<%-- ############################################################## --%>
-<div>
-		<%--  FORMULARIO DE ELIMINAR--%>
-		<form action="procesar.jsp" method="post" >
-			<div class="modal" id="form-del">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h2 class="modal-title">Eliminar cita</h2>
-							<button class="close" type="button" data-dismiss="modal">x</button>
-						</div>
-						<div class="modal-body">
-
-							
-
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary"
-									data-dismiss="modal">Cancelar</button>
-
-								<input type="submit" >
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</form>
-
-		<%-- ############################################################## --%>
-</div>
-
 	</div>		
 	
 	<div class="container">
 		<%--  FORMULARIO DE MODIFICAR--%>
-		<form action="procesar.jsp" name="sub"   method="post">
+		<form action="procesar.jsp" name="sub_edit" method="post">
 			<div class="modal" id="form-edit">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -337,14 +308,25 @@
 									
 							<div>
 						
-<<<<<<< Updated upstream
 							
 
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
 
-								<button type="submit"  class="btn btn-primary">Enviar</button>
+								<button type="button"   onclick="form_edit();" class="btn btn-primary">Enviar</button>
+								
+								
+								<input type="hidden" id="edit" name="edit">
+								
+								<script>
+								function form_edit(){
+								edit.value= "edit";
+						       sub_edit.submit();
+
+								}
+						
+								</script>
 							</div>
 						</div>
 					</div>
@@ -355,14 +337,13 @@
 
 		</form>
 
-		<%-- ############################################################## --%>
 
 
 
 		<%-- ############################################################## --%>
 
 		<%--  FORMULARIO DE ELIMINAR--%>
-		<form action="procesar.jsp" method="post">
+		<form action="procesar.jsp" method="post" name="sub_del">
 			<div class="modal" id="form-del">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -373,23 +354,32 @@
 						<div class="modal-body">
 
 							
+								<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Cita</span>
+								</div>
+								
+								<div class="form-group">
+								<label for="Cita">Numero de cita</label> <input
+									readonly class="form-control-plaintext" name="del_cita" id="del_cita" type="text" required>
+							</div>
+							
+							</div>
 
-=======
->>>>>>> Stashed changes
-							<div class="modal-footer">
+								<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
 
-								<button type="button" id="btn" onclick="subedit();" class="btn btn-primary">Enviar</button>
+								<button type="button" id="btn" onclick="form_del();" class="btn btn-primary">Enviar</button>
 								
 							</div>
 						</div>
-						<input type="hidden" id="e" name="edit">
+						<input type="hidden" id="del" name="del">
 						
 						<script>
-						function subedit(){
-						e.value= "mod";
-						       sub.submit();
+						function form_del(){
+						del.value= "del";
+						sub_del.submit();
 						   
 						    
 						}
@@ -416,6 +406,7 @@ function selectRow(){
           rindex  = this.rowIndex;
           console.log(rindex);
           document.getElementById("form_cita_NoCita").value = this.cells[0].innerHTML;
+
           document.getElementById("form_cita_Pname").value = this.cells[1].innerHTML;
           document.getElementById("form_cita_fecha").value = this.cells[2].innerHTML;
           document.getElementById("form_cita_fechaConsulta").value = this.cells[3].innerHTML;
@@ -424,6 +415,7 @@ function selectRow(){
           document.getElementById("form_cita_observacion").value = this.cells[6].innerHTML;
           document.getElementById("form_cita_user").value = this.cells[7].innerHTML;
           
+          document.getElementById("del_cita").value = this.cells[0].innerHTML;
         };
     }
 }
