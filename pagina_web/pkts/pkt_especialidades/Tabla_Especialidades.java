@@ -79,5 +79,35 @@ public boolean VerificarEspecilidades(int id) {
 		}
 		return false;
 	}
+public boolean EliminarEspecilidades(int id) {
+	
+	Statement statement = null;
+	String sql = "delete from `especialidades` where id='"+id+"')";
+	try {
+		statement.executeUpdate(sql);
+		return true;
+	} catch (Exception e) {                           
+		e.printStackTrace();
+		return false;
+	}
+
+}
+	public boolean ActualizarEspecialidades(int id,String descripcion) {
+
+	Connection conexion = EnlacetoDB();
+	Statement statement = null;
+
+	String sql = "UPDATE `especialidades` SET `id`='"+id+"',`descripcion`='"+descripcion+"' WHERE `id` = '"+id+"'";
+
+	try {
+		 
+		statement = conexion.createStatement();					
+		statement.executeUpdate(sql);	
+		return true;
+	} catch (Exception e) {                           
+		e.printStackTrace();
+		return false;
+	}
+}
 }
 

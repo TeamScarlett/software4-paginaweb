@@ -16,7 +16,6 @@ public class ModeloEstados {
 		return true;
 	}
 	public boolean EliminarEstado(int id) {
-		return ModeloEstados.EliminarEstodos(id);
+		return ModeloEstados.EliminarEstados(id);
 	}
-
 }

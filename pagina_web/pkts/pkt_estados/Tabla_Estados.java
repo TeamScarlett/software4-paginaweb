@@ -60,9 +60,7 @@ public class Tabla_Estados extends pkt_conexion.enlace{
 			return false;
 		}
 	}
-	public boolean EliminarEstodos(int id) {
-		return true;
-	}
+
 	
 public boolean VerificarEstados(int id) {
 		
@@ -83,6 +81,37 @@ public boolean VerificarEstados(int id) {
 		}
 		return false;
 	}
+public boolean EliminarEstados(int id) {
 	
+	
+	Statement statement = null;
+	String sql = "delete from `estados` where id='"+id+"')";
+	
+	try {
+		statement.executeUpdate(sql);
+		return true;
+	} catch (Exception e) {                           
+		e.printStackTrace();
+		return false;
+	}
+}
+
+public boolean ActualizarEstados(int id,String descripcion, int entidad) {
+
+Connection conexion = EnlacetoDB();
+Statement statement = null;
+
+String sql = "UPDATE `estados` SET `id`='"+id+"',`descripcion`='"+descripcion+"',`entidad`='"+entidad+"' WHERE `id` = '"+id+"'";
+
+try {
+	 
+	statement = conexion.createStatement();					
+	statement.executeUpdate(sql);	
+	return true;
+} catch (Exception e) {                           
+	e.printStackTrace();
+	return false;
+}
+}
 }
 

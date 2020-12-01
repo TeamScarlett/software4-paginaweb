@@ -54,9 +54,7 @@ public  boolean AgregarLaboratorio( int id, String descripcion) {
 		return false;
 	}
 }
-public boolean EliminarLaboratorios(int id) {
-	return true;
-}
+
 	public boolean VerificarLaboratorios(int id) {
 	
 	Statement statement = null;
@@ -76,4 +74,36 @@ public boolean EliminarLaboratorios(int id) {
 	return false;
 	
 }
-}
+	public boolean EliminarLaboratorios(int id) {
+
+		Statement statement = null;
+		
+		String sql = "delete from `laboratorios` where id='"+id+"')";
+		try {
+			statement.executeUpdate(sql);
+			return true;
+		} catch (Exception e) {                           
+			e.printStackTrace();
+			return false;
+		}
+	}
+		
+		public boolean ActualizarLaboratorios(int id,String descripcion) {
+
+			Connection conexion = EnlacetoDB();
+			Statement statement = null;
+
+			String sql = "UPDATE `laboratorios` SET `id`='"+id+"',`descripcion`='"+descripcion+"' WHERE `id` = '"+id+"'";
+		
+			try {
+				 
+				statement = conexion.createStatement();					
+				statement.executeUpdate(sql);	
+				return true;
+			} catch (Exception e) {                           
+				e.printStackTrace();
+				return false;
+			}
+		}
+	}
+

@@ -75,9 +75,7 @@ public class Tabla_Pacientes extends pkt_conexion.enlace{
 			return false;
 		}
 	}
-	public boolean EliminarPacientes(int id) {
-		return true;
-	}
+	
 	
 	public boolean VerificarPacientes(int id) {
 		
@@ -97,6 +95,40 @@ public class Tabla_Pacientes extends pkt_conexion.enlace{
 			e.printStackTrace();			
 		}
 		return false;
+	}
+public boolean EliminarPacientes(int id) {
+		
+		Statement statement = null;
+		
+		String sql = "delete from `pacientes` where id='"+id+"')";
+		try {
+			statement.executeUpdate(sql);
+			return true;
+		} catch (Exception e) {                           
+			e.printStackTrace();
+			return false;
+		}
+	}
 	
-}
+
+	public boolean ActualizarPacientes(int id,String nombre, String apellido, String cedula, String celular, String direccion, String email) {
+
+		Connection conexion = EnlacetoDB();
+
+		Statement statement = null;
+
+		String sql = "UPDATE `pacientes` SET `id`='"+id+"',`nombre`='"+nombre+"',`apellido`='"+apellido+"',`cedula`='"+cedula+"',`celular`=`"+celular+"',`direccion`='"+direccion+"' ,`email`='"+email+"' WHERE `id` = '"+id+"'";
+	
+
+		try {
+			 
+			statement = conexion.createStatement();					
+			statement.executeUpdate(sql);	
+			return true;
+		} catch (Exception e) {                           
+			e.printStackTrace();
+			return false;
+		}
+	}
+
 }
