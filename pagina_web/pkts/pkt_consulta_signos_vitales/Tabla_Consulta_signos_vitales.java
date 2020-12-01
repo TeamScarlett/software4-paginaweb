@@ -24,7 +24,7 @@ public class Tabla_Consulta_signos_vitales extends pkt_conexion.enlace {
 				Consulta_signos_vitales consulta_signos_vitales = new Consulta_signos_vitales();
 				consulta_signos_vitales.setId(rs.getInt(1));
 				consulta_signos_vitales.setIdconsulta(rs.getInt(2));
-				consulta_signos_vitales.setIdsignovital(rs.getInt(3));
+				consulta_signos_vitales.setIdsigno_vital(rs.getInt(3));
 				consulta_signos_vitales.setValor(rs.getFloat(4));
 
 				ListaConsulta_signos_vitales.add(consulta_signos_vitales);
@@ -43,14 +43,14 @@ public class Tabla_Consulta_signos_vitales extends pkt_conexion.enlace {
 
 	}
 
-	public boolean AgregarConsultaSignosVitales(int id, int idconsulta, int idsignovital, String valor) {
+	public boolean AgregarConsultaSignosVitales(int id, int idconsulta, int idsigno_vital, String valor) {
 
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
 
-		String sql = "INSERT INTO `consulta_recetas`(`id`, `idconsulta`, `idrecetas`, `otro`) VALUES ('" + id + "','"
-				+ idconsulta + "','" + idsignovital + "','" + valor + "')";
+		String sql = "INSERT INTO `consulta_signos_vitales`(`id`, `idconsulta`, `idsigno_vital`, `valor`) VALUES ('" + id + "','"
+				+ idconsulta + "','" + idsigno_vital + "','" + valor + "')";
 
 		try {
 
@@ -95,13 +95,13 @@ public class Tabla_Consulta_signos_vitales extends pkt_conexion.enlace {
 		return false;
 	}
 
-	public boolean ActualizarConsultaSignosVitales(int id, int idconsulta, int idsignovital, String valor) {
+	public boolean ActualizarConsultaSignosVitales(int id, int idconsulta, int idsigno_vital, String valor) {
 
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
 
-		String sql = "UPDATE `consulta_signos_vitales` SET `id`='"+id+"',`descripcion`='"+idconsulta+"',`idsignovital`='"+idsignovital+"', `valor`='"+valor+"' WHERE id = '"+id+"'";
+		String sql = "UPDATE `consulta_signos_vitales` SET `id`='"+id+"',`descripcion`='"+idconsulta+"',`idsigno_vital`='"+idsigno_vital+"', `valor`='"+valor+"' WHERE id = '"+id+"'";
 		
 		try {	
 			statement = conexion.createStatement();					

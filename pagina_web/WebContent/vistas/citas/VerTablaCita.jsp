@@ -44,7 +44,7 @@
 			</div>
 		</div>
 
-<form action="procesar.jsp" method="post" name="subadd">
+<form action="ProcesarCita.jsp" method="post" name="subadd">
 		<div class="modal" id="form-cita">
 			<div class="modal-dialog">
 					<div class="modal-content">
@@ -247,7 +247,7 @@
 		<%-- ############################################################## --%>
 <div>
 		<%--  FORMULARIO DE ELIMINAR--%>
-		<form action="procesar.jsp" method="post" >
+		<form action="ProcesarCita.jsp" method="post" >
 			<div class="modal" id="form-del">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -278,7 +278,7 @@
 	
 	<div class="container">
 		<%--  FORMULARIO DE MODIFICAR--%>
-		<form action="procesar.jsp" name="sub"   method="post">
+		<form action="ProcesarCita.jsp" name="sub"   method="post">
 			<div class="modal" id="form-edit">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -362,7 +362,7 @@
 		<%-- ############################################################## --%>
 
 		<%--  FORMULARIO DE ELIMINAR--%>
-		<form action="procesar.jsp" method="post">
+		<form action="ProcesarCita.jsp" method="post">
 			<div class="modal" id="form-del">
 				<div class="modal-dialog">
 					<div class="modal-content">

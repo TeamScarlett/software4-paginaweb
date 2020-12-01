@@ -8,11 +8,11 @@ public class ModeloConsultaSignosVitales {
 		public boolean VerificarConsultaSignosVitales(int id) {
 			return ModeloConsultaSignosVitales.VerificarConsultaSignosVitales(id);
 		}
-		public boolean AgregarConsultaSignosVitales(int id, int idconsulta, int idsignovital, String valor) {
-			return ModeloConsultaSignosVitales.AgregarConsultaSignosVitales(id, idconsulta, idsignovital, valor);
+		public boolean AgregarConsultaSignosVitales(int id, int idconsulta, int idsigno_vital, String valor) {
+			return ModeloConsultaSignosVitales.AgregarConsultaSignosVitales(id, idconsulta, idsigno_vital, valor);
 		}
-		public boolean ActualizarConsultaSignosVitales(int id, int idconsulta, int idsignovital, String valor) {
-			return ModeloConsultaSignosVitales.ActualizarConsultaSignosVitales(id, idconsulta, idsignovital, valor);
+		public boolean ActualizarConsultaSignosVitales(int id, int idconsulta, int idsigno_vital, String valor) {
+			return ModeloConsultaSignosVitales.ActualizarConsultaSignosVitales(id, idconsulta, idsigno_vital, valor);
 		}
 		public boolean EliminarConsultaSignosVitales(int id) {
 			return ModeloConsultaSignosVitales.EliminarConsultaSignosVitales(id);
