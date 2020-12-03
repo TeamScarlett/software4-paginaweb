@@ -19,13 +19,18 @@ public class Tabla_Citas extends pkt_conexion.enlace {
 
 
 		Connection conexion = EnlacetoDB();
+		
+		String sql = "SELECT citas.idcita,citas.idpaciente,citas.fecha,citas.fechaconsulta,especialidades.descripcion,citas.idmedico,citas.observacion,citas.idusuario\r\n"
+				+ "FROM citas\r\n"
+				+ "INNER JOIN especialidades\r\n"
+				+ "ON citas.idespecialidad=especialidades.id";
 
 		Statement statement = null;
 
 		try {
 			
 			statement = conexion.createStatement();
-			ResultSet rs = statement.executeQuery("select * from citas");
+			ResultSet rs = statement.executeQuery(sql);
 			
 
 			while (rs.next()) {
@@ -34,7 +39,7 @@ public class Tabla_Citas extends pkt_conexion.enlace {
 				cita.setIdpaciente(rs.getString(2));
 				cita.setFecha(rs.getDate(3).toString());
 				cita.setFechaConsulta(rs.getString(4));
-				cita.setIdespecialidad(rs.getInt(5));
+				cita.setIdespecialidad(rs.getString(5));
 				cita.setIdMedico(rs.getString(6));
 				cita.setObservacion(rs.getString(7));
 				cita.setIdUsuario(rs.getInt(8));

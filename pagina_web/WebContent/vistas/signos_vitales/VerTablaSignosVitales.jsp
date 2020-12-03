@@ -14,6 +14,10 @@
 
 <link rel="stylesheet" type="text/css" href="<%=Rutas.cssURL%>" />
 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
 
 <title>Tabla Signos vitales</title>
 </head>
@@ -34,7 +38,7 @@
 							<h2>Signos vitales</h2>
 						</div>
 						<div class="col-sm-6">
-							<a href="#añadirSignoVital" class="btn btn-success"
+							<a href="#añadirRegistro" class="btn btn-success"
 								data-toggle="modal" data-target="#form-add"><i class="material-icons">&#xE147;</i> <span>Agregar</span></a>
 
 						</div>
@@ -75,7 +79,7 @@
 						out.println("<td id=\"editar\">");
 						out.println(
 
-						"<a href=\"#editarConsulta\" id=\"btn_edit\" class=\"edit\" data-toggle=\"modal\" data-target=\"#form-edit\">"); 
+						"<a href=\"#editarRegistro\" id=\"btn_edit\" class=\"edit\" data-toggle=\"modal\" data-target=\"#form-edit\">"); 
 
 						out.print("<svg width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" class=\"bi bi-pencil-square\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">");
 						out.print("<path d=\"M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z\"/>");
@@ -174,7 +178,7 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h2 class="modal-title">Editar Consulta</h2>
+							<h2 class="modal-title">Editar Signo Vital</h2>
 							<button class="close" type="button" data-dismiss="modal">x</button>
 						</div>
 						<div class="modal-body">
@@ -248,22 +252,22 @@
 							
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Id Consulta</span>
+									<span class="input-group-text" id="basic-addon1">Id</span>
 								</div>
 								<input type="text" class="form-control" placeholder="# de Consulta"
 									id="data_del0" readonly aria-label="Username" aria-describedby="basic-addon1"
-									name="del_idsignovital" required>
+									name="del_id" required>
 							</div>
 
 	
 							
 									<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Paciente</span>
+									<span class="input-group-text" id="basic-addon1">Descripcion</span>
 								</div>
-								<input type="text" readonly class="form-control" placeholder="Nombre del paciente"
+								<input type="text" readonly class="form-control" placeholder="Descripcion"
 									id="data_del1" aria-label="Username" aria-describedby="basic-addon1"
-									name="del_descrip" required>
+									name="del_descripcion" required>
 							</div>
 
 							

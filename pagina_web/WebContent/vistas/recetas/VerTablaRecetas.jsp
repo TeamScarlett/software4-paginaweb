@@ -15,6 +15,10 @@
 
 <link rel="stylesheet" type="text/css" href="<%=Rutas.cssURL%>" />
 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
 
 <title>Tabla Recetas</title>
 </head>
@@ -137,7 +141,7 @@
 									<span class="input-group-text" id="basic-addon1">Descripcion</span>
 								</div>
 								<textarea  class="form-control" placeholder="Descripcion de la receta"
-									aria-label="Username" aria-describedby="basic-addon1"
+									placeholder="Explicación breve del medicamento" aria-label="Username" aria-describedby="basic-addon1"
 									name="add_observacion" required> </textarea>
 									
 							</div>
@@ -170,7 +174,7 @@
 <%--############################################################################################################## --%>		
 	
 		<%--  FORMULARIO DE MODIFICAR--%>
-		<form action="ProcesarConsulta.jsp" name="sub_edit" method="post">
+		<form action="ProcesarReceta.jsp" name="sub_edit" method="post">
 			<div class="modal" id="form-edit">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -196,7 +200,7 @@
 									<span class="input-group-text" id="basic-addon1">Descripcion</span>
 								</div>
 								<textarea  class="form-control" placeholder="Descripcion de la receta"
-									 id="data_edit1"  aria-label="Username" aria-describedby="basic-addon1"
+									placeholder="Explicación breve del medicamento" id="data_edit1"  aria-label="Username" aria-describedby="basic-addon1"
 									name="edit_observacion" required> </textarea>
 									
 							</div>
@@ -242,7 +246,7 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h2 class="modal-title">Eliminar consulta</h2>
+							<h2 class="modal-title">Eliminar Receta</h2>
 							<button class="close" type="button" data-dismiss="modal">x</button>
 						</div>
 						<div class="modal-body">
@@ -250,22 +254,22 @@
 							
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Id Consulta</span>
+									<span class="input-group-text" id="basic-addon1">ID de Receta</span>
 								</div>
 								<input type="text" class="form-control" placeholder="# de Consulta"
-									id="data_del_idconsulta" readonly aria-label="Username" aria-describedby="basic-addon1"
-									name="del_idconsulta" required>
+									id="data_del0" readonly aria-label="Username" aria-describedby="basic-addon1"
+									name="del_id" required>
 							</div>
 
 	
 							
 									<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Paciente</span>
+									<span class="input-group-text" id="basic-addon1">Descripcion</span>
 								</div>
 								<input type="text" readonly class="form-control" placeholder="Nombre del paciente"
-									id="data_del_paciente" aria-label="Username" aria-describedby="basic-addon1"
-									name="del_idpaciente" required>
+									id="data_del1" aria-label="Username" aria-describedby="basic-addon1"
+									name="del_descripcion" required>
 							</div>
 
 							

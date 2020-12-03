@@ -35,9 +35,9 @@ public class Tabla_Pacientes extends pkt_conexion.enlace{
 				pacientes.setNombre(rs.getString(3));
 				pacientes.setApellido(rs.getString(4));
 				pacientes.setDireccion(rs.getString(5));
-				pacientes.setEmail(rs.getString(7));
-				pacientes.setPass(rs.getString(8));
-				pacientes.setCelular(rs.getString(9));
+				pacientes.setEmail(rs.getString(6));
+				pacientes.setPass(rs.getString(7));
+				pacientes.setCelular(rs.getString(8));
 
 			
 

@@ -1,0 +1,27 @@
+*{
+	margin: 0;
+	font-family: 'Inter', sans-serif;
+	
+}
+
+.h2.col-sm-6{
+	text-align: center;
+}
+.span.form-control{
+	width:30px;
+	height:30px;
+	
+
+}
+
+.input.form-control{
+	width:30px;	
+	height:30px;
+	
+}
+.modal-body{
+	background-color: red;
+}
+.modal-title{
+	text-align: center;
+}

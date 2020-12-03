@@ -4,7 +4,7 @@ public class Consulta_laboratorio {
 
 	private int id;
 	private int idconsulta;
-	private int idreceta;
+	private String idreceta;
 	private String otro;
 	
 	
@@ -20,10 +20,10 @@ public class Consulta_laboratorio {
 	public void setIdconsulta(int idconsulta) {
 		this.idconsulta = idconsulta;
 	}
-	public int getIdreceta() {
+	public String getIdreceta() {
 		return idreceta;
 	}
-	public void setIdreceta(int idreceta) {
+	public void setIdreceta(String idreceta) {
 		this.idreceta = idreceta;
 	}
 	public String getOtro() {

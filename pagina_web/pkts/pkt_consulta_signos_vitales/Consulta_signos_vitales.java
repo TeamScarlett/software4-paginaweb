@@ -4,7 +4,7 @@ public class Consulta_signos_vitales {
 
 	private int id;
 	private int idconsulta;
-	private int idsigno_vital;
+	private String idsigno_vital;
 	private float valor;
 	
 	public int getId() {
@@ -19,10 +19,10 @@ public class Consulta_signos_vitales {
 	public void setIdconsulta(int idconsulta) {
 		this.idconsulta = idconsulta;
 	}
-	public int getIdsigno_vital() {
+	public String getIdsigno_vital() {
 		return idsigno_vital;
 	}
-	public void setIdsigno_vital(int idsigno_vital) {
+	public void setIdsigno_vital(String idsigno_vital) {
 		this.idsigno_vital = idsigno_vital;
 	}
 	public float getValor() {

@@ -4,7 +4,7 @@ public class Rutas {
 	
 	// PROYECTO LINKS
 	
-	public static String cssURL = "http://localhost:8080/pagina_web/styles/Main.css";	
+	public static String cssURL = "http://localhost:8080/pagina_web/Estilos/Main.css";	
 	public static String proyecto = "http://localhost:8080/pagina_web";
 	public static String vistasURL = "http://localhost:8080/pagina_web/vistas/";
 	

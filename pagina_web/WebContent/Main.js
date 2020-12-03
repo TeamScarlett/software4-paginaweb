@@ -1,5 +1,8 @@
+function fallido(){
+	alert("Fallo");
+}
+
 function form_add() {
-	console.log("Mensaje");
 	add.value = "add";
 	sub_add.submit();
 }
@@ -12,7 +15,7 @@ function form_del() {
 	sub_del.submit();
 }
 
-function seleccionarDatos() {
+function ModificarDatos() {
 
 
 	var table = document.getElementById("listado");
@@ -23,6 +26,7 @@ function seleccionarDatos() {
 
 				for (var x = 0; x < filas - 2; x++) {
 					let fila = "data_edit" + x;
+					
 					document.getElementById(fila).value = this.cells[x].innerHTML;
 				}
 			};
@@ -30,7 +34,12 @@ function seleccionarDatos() {
 
 		}
 	};
-
+	
+}
+function EliminarDatos(){
+	
+	var table = document.getElementById("listado");
+	var filas = document.getElementsByTagName('th').length;
 	document.getElementById('btn_del').onclick = function() {
 
 		for (var i = 0; i < table.rows.length; i++) {
@@ -48,4 +57,5 @@ function seleccionarDatos() {
 	};
 }
 
-seleccionarDatos();
+ModificarDatos();
+EliminarDatos();

@@ -15,21 +15,17 @@
 <header class="navbar navbar-dark bg-dark">
 
 <nav class="navbar navbar-expand-md navbar-light bg-faded">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-   <a class="navbar-brand" href="../vistas/index.jsp">
-    <img src="<%=Rutas.proyecto%>/recursos/clinica.png" width="30" height="30" alt="" loading="lazy">
+   <a class="navbar-brand" href="#">
+    <img src="../recursos/clinica.png" width="30" height="30" alt="" loading="lazy">
   </a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mr-auto">
-            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Pricing</a>
-            <a class="nav-link" href="#">Pricing</a>
-            <a class="nav-link" href="#">Pricing</a>
-            <a class="nav-link" href="#">Pricing</a>
-            <a class="nav-link" href="#">Pricing</a>
+           
+            <a class="nav-link" href="#">Citas</a>
+            <a class="nav-link" href="#">Consultas</a>
+            <a class="nav-link" href="#">Pacientes</a>
+            <a class="nav-link" href="#">Más</a>
+            <a class="nav-link" href="#">Usuarios</a>
      
         </div>
     </div>

@@ -18,17 +18,20 @@ public class Tabla_usuarios_especialidades extends pkt_conexion.enlace{
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
+		
+		String SQL = "SELECT usuarios_especialidades.id,especialidades.descripcion,usuarios_especialidades.idusuario FROM usuarios_especialidades\r\n"
+				+ "INNER JOIN especialidades on especialidades.id=usuarios_especialidades.id";
 
 		try {
 			
 			statement = conexion.createStatement();
-			ResultSet rs = statement.executeQuery("select * from citas");
+			ResultSet rs = statement.executeQuery(SQL);
 			
 
 			while (rs.next()) {
 				Usuarios_especialidades Usuarios_especialidades = new Usuarios_especialidades();
 				Usuarios_especialidades.setId(rs.getInt(1));
-				Usuarios_especialidades.setIdespecialidad(rs.getInt(2));
+				Usuarios_especialidades.setIdespecialidad(rs.getString(2));
 				Usuarios_especialidades.setIdusuario(rs.getInt(3));
 
 				

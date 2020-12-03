@@ -14,6 +14,10 @@
 
 <link rel="stylesheet" type="text/css" href="<%=Rutas.cssURL%>" />
 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
 
 <title>Tabla Sintomas</title>
 </head>
@@ -31,10 +35,10 @@
 				<div class="table-title">
 					<div class="row">
 						<div class="col-sm-6">
-							<h2>Signos vitales</h2>
+							<h2>Sintomas</h2>
 						</div>
 						<div class="col-sm-6">
-							<a href="#añadirSintoma" class="btn btn-success"
+							<a href="#añadirRegistro" class="btn btn-success"
 								data-toggle="modal" data-target="#form-add"><i class="material-icons">&#xE147;</i> <span>Agregar</span></a>
 
 						</div>
@@ -50,7 +54,7 @@
 
 				<thead>
 					<tr>
-						<th scope="col">ID Signo vital</th>
+						<th scope="col">ID</th>
 						<th scope="col">Descripcion</th>
 						<th scope="col">Modificar</th>
 						<th scope="col">Eliminar</th>
@@ -68,7 +72,7 @@
 
 
 						out.println("<tr scope=\"row\"></th>");
-						out.println("<td id=\"idcitaedit\">" + ListaSintomas.get(i).getId() + "</td>");
+						out.println("<td>" + ListaSintomas.get(i).getId() + "</td>");
 						out.println("<td>" + ListaSintomas.get(i).getDescripcion()+ "</td>");
 						
 						
@@ -115,7 +119,7 @@
 			<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h2 class="modal-title">Formulario de Sintomas</h2>
+							<h2 class="modal-title">Formulario de Sintoma</h2>
 							<button class="close" type="button" data-dismiss="modal">x</button>
 						</div>
 						<div class="modal-body">
@@ -136,7 +140,7 @@
 								</div>
 								<textarea  class="form-control" placeholder="Explicación del sintoma"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="add_descrip" required> </textarea>
+									name="add_descripcion" required> </textarea>
 									
 							</div>
 							
@@ -197,7 +201,7 @@
 								</div>
 								<textarea  class="form-control" placeholder="Explicación del sintoma"
 									id="data_edit1" aria-label="Username" aria-describedby="basic-addon1"
-									name="edit_descrip" required> </textarea>
+									name="edit_descripcion" required> </textarea>
 									
 							</div>
 												
@@ -263,7 +267,7 @@
 								</div>
 								<input type="text" readonly class="form-control" placeholder="Explicación del sintoma"
 									id="data_del1" aria-label="Username" aria-describedby="basic-addon1"
-									name="del_descrip" required>
+									name="del_descripcion" required>
 							</div>
 
 							

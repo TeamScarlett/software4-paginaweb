@@ -18,9 +18,9 @@ public class Usuarios {
 	
 	private String celular;
 	
-	private int idtipousuario;
+	private String idtipousuario;
 	
-	private int idestado;
+	private String idestado;
 	
 	
 	public int getId() {
@@ -71,16 +71,16 @@ public class Usuarios {
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
-	public int getIdtipousuario() {
+	public String getIdtipousuario() {
 		return idtipousuario;
 	}
-	public void setIdtipousuario(int idtipousuario) {
+	public void setIdtipousuario(String idtipousuario) {
 		this.idtipousuario = idtipousuario;
 	}
-	public int getIdestado() {
+	public String getIdestado() {
 		return idestado;
 	}
-	public void setIdestado(int idestado) {
+	public void setIdestado(String idestado) {
 		this.idestado = idestado;
 	}
 

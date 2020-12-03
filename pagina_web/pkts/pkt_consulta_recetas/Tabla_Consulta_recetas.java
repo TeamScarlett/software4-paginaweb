@@ -15,6 +15,8 @@ public class Tabla_Consulta_recetas extends pkt_conexion.enlace {
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
+		
+		String SQL = "SELECT consulta_recetas.id,consulta_recetas.idconsulta,recetas.descripcion,consulta_recetas.otro FROM `consulta_recetas` INNER JOIN recetas ON consulta_recetas.idrecetas=recetas.id";
 
 		try {
 
@@ -25,7 +27,7 @@ public class Tabla_Consulta_recetas extends pkt_conexion.enlace {
 				Consulta_recetas consulta_recetas = new Consulta_recetas();
 				consulta_recetas.setId(rs.getInt(1));
 				consulta_recetas.setIdconsulta(rs.getInt(2));
-				consulta_recetas.setIdrecetas(rs.getInt(3));
+				consulta_recetas.setIdrecetas(rs.getString(3));
 				consulta_recetas.setOtro(rs.getString(4));
 
 				ListaConsulta_recetas.add(consulta_recetas);

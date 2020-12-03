@@ -12,20 +12,20 @@ public class Tabla_usuarios extends pkt_conexion.enlace{
 
 	public static LinkedList<Usuarios> getUsuarios() {
 
-
-
 		LinkedList<Usuarios> ListaUsuarios = new LinkedList<Usuarios>();
-
-
 
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
+		
+		String SQL = "SELECT usuarios.id,usuarios.cedula,usuarios.nombre,usuarios.apellido,usuarios.direccion,usuarios.email,usuarios.PASSWORD,usuarios.celular,tipousuario.descripcion,estados.descripcion FROM usuarios\r\n"
+				+ "INNER JOIN tipousuario ON tipousuario.id = usuarios.idtipousuario\r\n"
+				+ "INNER JOIN estados ON estados.id = usuarios.idestado";
 
 		try {
 	
 			statement = conexion.createStatement();
-			ResultSet rs = statement.executeQuery("select * from usuarios");
+			ResultSet rs = statement.executeQuery(SQL);
 	
 
 			while (rs.next()) {
@@ -38,8 +38,8 @@ public class Tabla_usuarios extends pkt_conexion.enlace{
 				Usuarios.setEmail(rs.getString(6));
 				Usuarios.setPassword(rs.getString(7));
 				Usuarios.setCelular(rs.getString(8));
-				Usuarios.setIdtipousuario(rs.getInt(9));
-				Usuarios.setIdestado(rs.getInt(10));
+				Usuarios.setIdtipousuario(rs.getString(9));
+				Usuarios.setIdestado(rs.getString(10));
 
 			
 

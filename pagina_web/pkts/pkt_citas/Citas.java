@@ -6,7 +6,7 @@ public class Citas{
 	private String Idpaciente;
 	private String Fecha;
 	private String FechaConsulta;
-	private int Idespecialidad;
+	private String Idespecialidad;
 	private String IdMedico;
 	private String observacion;
 	private int idUsuario;
@@ -55,12 +55,12 @@ public class Citas{
 	}
 	
 
-	public int getIdespecialidad() {
+	public String getIdespecialidad() {
 		return Idespecialidad;
 	}
 	
 
-	public void setIdespecialidad(int idespecialidad) {
+	public void setIdespecialidad(String idespecialidad) {
 		Idespecialidad = idespecialidad;
 	}
 	

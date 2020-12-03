@@ -13,6 +13,10 @@
 
 <link rel="stylesheet" type="text/css" href="<%=Rutas.cssURL%>" />
 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
 
 <title>Tabla Consulta Laboratorio</title>
 </head>
@@ -33,8 +37,8 @@
 							<h2>Consulta Laboratorio</h2>
 						</div>
 						<div class="col-sm-6">
-							<a href="#añadirConsultaLaboratorio" class="btn btn-success"
-								data-toggle="modal" data-target="#form-conslab"><i class="material-icons">&#xE147;</i> <span>Agregar</span></a>
+							<a href="#añadirRegistro" class="btn btn-success"
+								data-toggle="modal" data-target="#form-add"><i class="material-icons">&#xE147;</i> <span>Agregar</span></a>
 	
 						</div>
 					</div>
@@ -52,7 +56,7 @@
 					<tr>
 						<th scope="col">Id</th>
 						<th scope="col">Id Consulta</th>
-						<th scope="col">Id Receta</th>
+						<th scope="col">Receta</th>
 						<th scope="col">Otro</th>
 						<th scope="col">Modificar</th>
 						<th scope="col">Eliminar</th>
@@ -113,7 +117,7 @@
 	
 	<%--#################################################AGREGAR############################################################# --%>
 <form action="ProcesarConsultaLab.jsp" method="post" name="sub_add">
-		<div class="modal" id="form-conslab">
+		<div class="modal" id="form-add">
 			<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -128,7 +132,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Id"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="id" required="required">
+									name="add_id" required="required">
 									
 							</div>
 						
@@ -139,17 +143,17 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Id de Consulta"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="idconsulta" required="required">
+									name="add_idconsulta" required="required">
 									
 							</div>
 							
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Id Receta</span>
+									<span class="input-group-text" id="basic-addon1">Receta</span>
 								</div>
-								<input type="date" class="form-control" placeholder="Id de Receta"
+								<input type="text" class="form-control" placeholder="Nombre de Receta"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="idreceta" required="required">
+									name="add_idreceta" required="required">
 									
 							</div>
 							
@@ -157,11 +161,15 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Otro</span>
 								</div>
-								<input type="date" class="form-control" placeholder="Otro"
+								<input type="text" class="form-control" placeholder="Otro"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="otro" required="required">								
+									name="add_otro" required="required">								
 							</div>
 										
+							</div>
+							
+							
+							<div>
 							
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
@@ -169,20 +177,16 @@
 															
 
 								<button type="button"   onclick="form_add();" class="btn btn-primary">Enviar</button>
-
+								
+								<input type="hidden" id="add" name="add">
+								
+							</div>
 							</div>
 							
-							<input type="hidden" id="add" name="add">
 							
-							<script>
-							function form_add(){
-								add.value= "add";
-						       sub_add.submit();
-
-							}
+							
 						
-						</script>
-						</div>
+						
 					</div>
 				</div>
 		</div>
@@ -205,32 +209,52 @@
 						</div>
 						<div class="modal-body">
 
-							<div class="form-group">
-								<label for="Id">Id</label> <input
-									readonly class="form-control-plaintext" id="form_conslab_id" type="text" required>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Id"
+									id="data_edit0" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_id" required="required">
+									
 							</div>
-							<div class="form-group">
-								<label for="Idconsulta">Id Consulta</label> <input
-									id="form_conslab_idconsulta" type="text" class="form-control" required>
+						
+						
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id Consulta</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Id de Consulta"
+									id="data_edit1" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_idconsulta" required="required">
+									
 							</div>
-
-							<div class="form-group">
-								<label for="Idreceta">Id Receta</label> <input
-									id="form_conslab_idreceta" type="text" class="form-control" required>
+							
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Receta</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Nombre de Receta"
+									id="data_edit2" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_idreceta" required="required">
+									
 							</div>
-
-							<div class="form-group">
-								<label for="Otro">Otro</label> <input
-									id="form_conslab_otro" type="text" class="form-control"
-									required>
+							
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Otro</span>
+								</div>
+								 <input type="text" class="form-control" placeholder="Otro"
+									id="data_edit3" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_otro" required="required">								
 							</div>
 				
-								</div>
+						</div>
 												
-							<div>
+							
 						
 							
-
+							<div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
@@ -240,16 +264,10 @@
 								
 								<input type="hidden" id="edit" name="edit">
 								
-								<script>
-								function form_edit(){
-								edit.value= "edit";
-						       sub_edit.submit();
-
-								}
-						
-								</script>
+							
 							</div>
-						</div>
+							</div>
+						
 					</div>
 				</div>
 			</div>
@@ -274,18 +292,31 @@
 						</div>
 						<div class="modal-body">
 
-							
-								<div class="input-group mb-3">
+							<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Consulta Laboratorio</span>
+									<span class="input-group-text" id="basic-addon1">Id</span>
 								</div>
+								<input type="text" readonly class="form-control" placeholder="Id"
+									id="data_del0" aria-label="Username" aria-describedby="basic-addon1"
+									name="del_id" required="required">
+									
+							</div>
+						
+						
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id Consulta</span>
+								</div>
+								<input type="text" readonly class="form-control" placeholder="Id de Consulta"
+									id="data_del1" aria-label="Username" aria-describedby="basic-addon1"
+									name="del_idconsulta" required="required">
+									
+							</div>
 								
-								<div class="form-group">
-								<label for="Id">Id</label> <input
-									readonly class="form-control-plaintext" name="del_id" id="del_id" type="text" required>
+								
 							</div>
 							
-							</div>
+							<div>
 
 								<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
@@ -293,19 +324,10 @@
 
 								<button type="button" id="btn" onclick="form_del();" class="btn btn-primary">Enviar</button>
 								
+								<input type="hidden" id="del" name="del">
 							</div>
-						</div>
-						<input type="hidden" id="del" name="del">
-						
-						<script>
-						function form_del(){
-						del.value= "del";
-						sub_del.submit();
-						   
-						    
-						}
-						
-						</script>
+							
+							</div>									
 					</div>
 				</div>
 			</div>
@@ -317,27 +339,7 @@
 		
 <%@ include file="../footer.jsp"%>
 
-<script>
 
-
-function selectRow(){
-    var rindex, table = document.getElementById("listado");
-    for(var i=1;i<table.rows.length;i++){
-        table.rows[i].onclick = function(){
-          rindex  = this.rowIndex;
-          console.log(rindex);
-          document.getElementById("form_conslab_id").value = this.cells[0].innerHTML;
-          document.getElementById("form_conslab_idconsulta").value = this.cells[1].innerHTML;
-          document.getElementById("form_conslab_idreceta").value = this.cells[2].innerHTML;
-          document.getElementById("form_conslab_otro").value = this.cells[3].innerHTML;
-         
-          document.getElementById("del_id").value = this.cells[0].innerHTML;
-        };
-    }
-}
-
-selectRow();
-</script>
 
 <script src="http://localhost:8080/pagina_web/Main.js"></script>
   

@@ -14,17 +14,17 @@ public class Tabla_Consulta_laboratorio extends pkt_conexion.enlace {
 
 		Connection conexion = EnlacetoDB();
 		Statement statement = null;
-
+		String SQL = "SELECT consulta_laboratorios.id,consulta_laboratorios.idconsulta,recetas.descripcion,consulta_laboratorios.otro FROM consulta_laboratorios INNER JOIN recetas on consulta_laboratorios.idreceta = recetas.id";
 		try {
 
 			statement = conexion.createStatement();
-			ResultSet rs = statement.executeQuery("select * from consulta_laboratorios");
+			ResultSet rs = statement.executeQuery(SQL);
 
 			while (rs.next()) {
 				Consulta_laboratorio consulta_laboratorio = new Consulta_laboratorio();
 				consulta_laboratorio.setId(rs.getInt(1));
 				consulta_laboratorio.setIdconsulta(rs.getInt(2));
-				consulta_laboratorio.setIdreceta(rs.getInt(3));
+				consulta_laboratorio.setIdreceta(rs.getString(3));
 				consulta_laboratorio.setOtro(rs.getString(4));
 
 				ListaConsulta_laboratorio.add(consulta_laboratorio);

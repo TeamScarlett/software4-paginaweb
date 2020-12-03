@@ -4,7 +4,7 @@ public class Usuarios_especialidades {
 	
 	private int id;
 	
-	private  int idespecialidad;
+	private  String idespecialidad;
 	
 	private int idusuario;
 	
@@ -14,10 +14,10 @@ public class Usuarios_especialidades {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getIdespecialidad() {
+	public String getIdespecialidad() {
 		return idespecialidad;
 	}
-	public void setIdespecialidad(int idespecialidad) {
+	public void setIdespecialidad(String idespecialidad) {
 		this.idespecialidad = idespecialidad;
 	}
 	public int getIdusuario() {

@@ -16,6 +16,10 @@
 
 <link rel="stylesheet" type="text/css" href="<%=Rutas.cssURL%>" />
 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
 
 <title>Tabla tipo usuario</title>
 </head>
@@ -33,7 +37,7 @@
 				<div class="table-title">
 					<div class="row">
 						<div class="col-sm-6">
-							<h2>Signos vitales</h2>
+							<h2>Tipo usuario</h2>
 						</div>
 						<div class="col-sm-6">
 							<a href="#añadirTipoUsuario" class="btn btn-success"
@@ -70,7 +74,7 @@
 
 
 						out.println("<tr scope=\"row\"></th>");
-						out.println("<td id=\"idcitaedit\">" + ListaTipoUsuario.get(i).getId() + "</td>");
+						out.println("<td>" + ListaTipoUsuario.get(i).getId() + "</td>");
 						out.println("<td>" + ListaTipoUsuario.get(i).getDescripcion()+ "</td>");
 						
 						
@@ -112,7 +116,7 @@
 	</div>
 	
 	<%--############################################################################################################## --%>
-<form action="ProcesarSintomas.jsp" method="post" name="sub_add">
+<form action="ProcesarTipoUsuario.jsp" method="post" name="sub_add">
 		<div class="modal" id="form-add">
 			<div class="modal-dialog">
 					<div class="modal-content">
@@ -151,7 +155,7 @@
 								<button type="button"   onclick="form_add();" class="btn btn-primary">Enviar</button>
 								
 								
-								<input type="hidden" id="add" name="ad">
+								<input type="hidden" id="add" name="add">
 								
 							
 							</div>
@@ -199,7 +203,7 @@
 								</div>
 								<textarea  class="form-control" placeholder="Explicación del tipo usuario"
 									id="data_edit1" aria-label="Username" aria-describedby="basic-addon1"
-									name="edit_descrip" required> </textarea>
+									name="edit_descripcion" required> </textarea>
 									
 							</div>
 												

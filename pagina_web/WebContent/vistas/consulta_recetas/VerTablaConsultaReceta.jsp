@@ -13,6 +13,10 @@
 
 <link rel="stylesheet" type="text/css" href="<%=Rutas.cssURL%>" />
 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
 
 <title>Tabla Consulta Recetas</title>
 </head>
@@ -61,15 +65,13 @@
 
 				<tbody>
 					<%
-						//SE CREA LA LISTA Y SE UTILIZA EL METODO getCitas PARA OBTENER LA LISTA DE CITAS
+					
 
 					LinkedList<Consulta_recetas> ListaConsulta_recetas = Tabla_Consulta_recetas.getConsulta_recetas();
 
 					for (int i = 0; i < ListaConsulta_recetas.size(); i++) {
 
-						//MIENTRAS EXISTAN REGISTROS SE OBTENDRAN POR LA POSICION Y EN LA POSICION SE IMPRIMEN LOS ATRIBUTOS
-						// Y SE PUEDEN TENER INFINIDAD DE ATRIBUTOS Y SERAN DE LA POSICION i
-
+						
 						out.println("<tr scope=\"row\"></th>");
 						out.println("<td id=\"idcitaedit\">" +ListaConsulta_recetas.get(i).getId() + "</td>");
 						out.println("<td>" + ListaConsulta_recetas.get(i).getIdconsulta() + "</td>");

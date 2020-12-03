@@ -13,6 +13,10 @@
 
 <link rel="stylesheet" type="text/css" href="<%=Rutas.cssURL%>" />
 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
 
 <title>Tabla Consulta Sintomas</title>
 </head>
@@ -52,7 +56,7 @@
 					<tr>
 						<th scope="col">Id</th>
 						<th scope="col">Id Consulta</th>
-						<th scope="col">Id Sintoma</th>
+						<th scope="col">Sintoma</th>
 						<th scope="col">Observacion</th>
 						<th scope="col">Modificar</th>
 						<th scope="col">Eliminar</th>
@@ -113,7 +117,7 @@
 	
 	<%--#################################################AGREGAR############################################################# --%>
 <form action="ProcesarConsultaSintomas.jsp" method="post" name="sub_add">
-		<div class="modal" id="form-consint">
+		<div class="modal" id="form-add">
 			<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -128,7 +132,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Id"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="id" required="required">
+									name="add_id" required="required">
 									
 							</div>
 						
@@ -139,7 +143,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Id de Consulta"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="idconsulta" required="required">
+									name="add_idconsulta" required="required">
 									
 							</div>
 							
@@ -149,7 +153,7 @@
 								</div>
 								<input type="date" class="form-control" placeholder="Id de Recetas"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="idsintoma" required="required">
+									name="add_idsintoma" required="required">
 									
 							</div>
 							
@@ -159,7 +163,7 @@
 								</div>
 								<input type="date" class="form-control" placeholder="Otro"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="observacion" required="required">								
+									name="add_observacion" required="required">								
 							</div>
 										
 							
@@ -174,14 +178,6 @@
 							
 							<input type="hidden" id="add" name="add">
 							
-							<script>
-							function form_add(){
-								add.value= "add";
-						       sub_add.submit();
-
-							}
-						
-						</script>
 						</div>
 					</div>
 				</div>
@@ -239,14 +235,6 @@
 								
 								<input type="hidden" id="edit" name="edit">
 								
-								<script>
-								function form_edit(){
-								edit.value= "edit";
-						       sub_edit.submit();
-
-								}
-						
-								</script>
 							</div>
 						</div>
 					</div>
@@ -296,15 +284,6 @@
 						</div>
 						<input type="hidden" id="del" name="del">
 						
-						<script>
-						function form_del(){
-						del.value= "del";
-						sub_del.submit();
-						   
-						    
-						}
-						
-						</script>
 					</div>
 				</div>
 			</div>
@@ -318,25 +297,6 @@
 
 <script>
 
-
-function selectRow(){
-    var rindex, table = document.getElementById("listado");
-    for(var i=1;i<table.rows.length;i++){
-        table.rows[i].onclick = function(){
-          rindex  = this.rowIndex;
-          console.log(rindex);
-          document.getElementById("form_consint_id").value = this.cells[0].innerHTML;
-          document.getElementById("form_consint_idconsulta").value = this.cells[1].innerHTML;
-          document.getElementById("form_consint_idsintoma").value = this.cells[2].innerHTML;
-          document.getElementById("form_consint_observacion").value = this.cells[3].innerHTML;
-         
-          document.getElementById("del_id").value = this.cells[0].innerHTML;
-        };
-    }
-}
-
-selectRow();
-</script>
 
 <script src="http://localhost:8080/pagina_web/Main.js"></script>
   

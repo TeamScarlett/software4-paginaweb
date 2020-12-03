@@ -16,17 +16,21 @@ public class Tabla_Consulta_diagnostico extends pkt_conexion.enlace {
 		Connection conexion = EnlacetoDB();
 
 		Statement statement = null;
+		
+		String SQL = "SELECT consulta_diagnostico.id,consulta_diagnostico.idconsulta,diagnosticos.descripcion,consulta_diagnostico.observacion FROM consulta_diagnostico\r\n"
+				+ "INNER JOIN diagnosticos\r\n"
+				+ "ON consulta_diagnostico.iddiagnostico=diagnosticos.id";
 
 		try {
 
 			statement = conexion.createStatement();
-			ResultSet rs = statement.executeQuery("select * from consulta_diagnostico");
+			ResultSet rs = statement.executeQuery(SQL);
 
 			while (rs.next()) {
 				Consulta_diagnostico consulta_diag = new Consulta_diagnostico();
 				consulta_diag.setId(rs.getInt(1));
 				consulta_diag.setIdconsulta(rs.getInt(2));
-				consulta_diag.setIddiagnostico(rs.getInt(3));
+				consulta_diag.setIddiagnostico(rs.getString(3));
 				consulta_diag.setObservacion(rs.getString(4));
 
 				ListaConsulta_diagnostico.add(consulta_diag);
@@ -43,6 +47,7 @@ public class Tabla_Consulta_diagnostico extends pkt_conexion.enlace {
 
 		return ListaConsulta_diagnostico;
 	}
+	
 
 
 	public boolean AgregarConsultaDiagnostico(int id, int idconsulta, int iddiagnostico, String observacion) {

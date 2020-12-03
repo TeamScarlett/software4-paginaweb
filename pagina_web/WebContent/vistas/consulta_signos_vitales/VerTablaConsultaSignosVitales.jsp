@@ -13,6 +13,10 @@
 
 <link rel="stylesheet" type="text/css" href="<%=Rutas.cssURL%>" />
 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
 
 <title>Tabla Consulta Signos Vitales</title>
 </head>
@@ -52,7 +56,7 @@
 					<tr>
 						<th scope="col">Id</th>
 						<th scope="col">Id Consulta</th>
-						<th scope="col">Id Signo Vital</th>
+						<th scope="col">Signo Vital</th>
 						<th scope="col">Valor</th>
 						<th scope="col">Modificar</th>
 						<th scope="col">Eliminar</th>

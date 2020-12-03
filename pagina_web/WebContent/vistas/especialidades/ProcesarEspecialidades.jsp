@@ -9,7 +9,8 @@ String add =request.getParameter("add");
 
 if(add != null){
 	out.println("add");
-	
+	out.println(request.getParameter("add_id"));
+	out.println(request.getParameter("add_descripcion"));
 }
 String del = request.getParameter("del");
 if(del !=null){

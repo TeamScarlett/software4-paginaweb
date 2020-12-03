@@ -14,17 +14,19 @@ public class Tabla_Consulta_signos_vitales extends pkt_conexion.enlace {
 
 		Connection conexion = EnlacetoDB();
 		Statement statement = null;
+		String SQL = "SELECT consulta_signos_vitales.id,consulta_signos_vitales.idconsulta,signos_vitales.descripcion,consulta_signos_vitales.valor FROM consulta_signos_vitales\r\n"
+				+ "INNER JOIN signos_vitales ON consulta_signos_vitales.idsigno_vital = signos_vitales.id";
 
 		try {
 
 			statement = conexion.createStatement();
-			ResultSet rs = statement.executeQuery("select * from consulta_signos_vitales");
+			ResultSet rs = statement.executeQuery(SQL);
 
 			while (rs.next()) {
 				Consulta_signos_vitales consulta_signos_vitales = new Consulta_signos_vitales();
 				consulta_signos_vitales.setId(rs.getInt(1));
 				consulta_signos_vitales.setIdconsulta(rs.getInt(2));
-				consulta_signos_vitales.setIdsigno_vital(rs.getInt(3));
+				consulta_signos_vitales.setIdsigno_vital(rs.getString(3));
 				consulta_signos_vitales.setValor(rs.getFloat(4));
 
 				ListaConsulta_signos_vitales.add(consulta_signos_vitales);
