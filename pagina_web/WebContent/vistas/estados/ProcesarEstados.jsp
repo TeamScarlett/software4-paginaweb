@@ -36,11 +36,8 @@ if(edit !=null){
 	int edit_id = Integer.valueOf(request.getParameter("edit_id"));
 	String edit_descripcion = request.getParameter("edit_descripcion");
 	ModeloEstados Modelo = new ModeloEstados();
-	
+	//if(Modelo.ActualizarEstado(edit_id, edit_descripcion, edit_entidad)){
+		// response.sendRedirect("VerTablaDiagnosticos.jsp");	
+		 //}
 }
 %>
-
-
-<%--  	if(Modelo.ActualizarEstado(edit_id, edit_descripcion, edit_entidad)){
-		 response.sendRedirect("VerTablaDiagnosticos.jsp");	}	--%>
-		
