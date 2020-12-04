@@ -7,7 +7,7 @@ String add=request.getParameter("add");
 if(add != null){
 	out.println("add");
 	int add_id = Integer.valueOf(request.getParameter("add_id"));
-	String add_descripcion = request.getParameter("add_descripcion");
+	String add_descripcion = request.getParameter("add_descripcion"); 
 	 response.sendRedirect("VerTablaLab.jsp");
 }
 

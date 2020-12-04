@@ -11,7 +11,10 @@ if(add != null){
 	int add_idconsulta = Integer.valueOf(request.getParameter("add_idconsulta"));
 	int add_idsintoma = Integer.valueOf(request.getParameter("add_idsigno_vital"));
 	String add_observacion = request.getParameter("add_valor");
-	 response.sendRedirect("VerTablaConsultaSintomas.jsp");
+	ModeloConsultaSintomas Modelo = new ModeloConsultaSintomas();
+	if(Modelo.AgregarConsultaSintomas(add_id, add_idconsulta, add_idsintoma, add_observacion)){
+	response.sendRedirect("VerTablaConsultaReceta.jsp");
+	}
 }
 
 
@@ -20,7 +23,10 @@ String del = request.getParameter("del");
 if(del !=null){
 	out.println("del");
 	int del_id  = Integer.valueOf(request.getParameter("del_id"));
-	 response.sendRedirect("VerTablaConsultaSintomas.jsp");
+	ModeloConsultaSintomas Modelo = new ModeloConsultaSintomas();
+	if(Modelo.EliminarConsultaSintomas(del_id)){
+	response.sendRedirect("VerTablaConsultaReceta.jsp");
+	}
 }
 
 String edit = request.getParameter("edit");
@@ -30,5 +36,8 @@ if(edit !=null){
 	int edit_idconsulta = Integer.valueOf(request.getParameter("edit_idconsulta"));
 	int edit_idsintoma = Integer.valueOf(request.getParameter("edit_idsigno_vital"));
 	String edit_observacion = request.getParameter("edit_observacion");
-	 response.sendRedirect("VerTablaConsultaSintomas.jsp");
+	ModeloConsultaSintomas Modelo = new ModeloConsultaSintomas();
+	if(Modelo.ActualizarConsultaSintomas(edit_id, edit_idconsulta, edit_idsintoma, edit_observacion)){
+	response.sendRedirect("VerTablaConsultaReceta.jsp");
+	}
 }

@@ -9,11 +9,11 @@ public class ModeloConsultaLab {
 	public boolean VerificarConsultaLab(int id) {
 		return ModeloConsultaLab.VerificarConsultaLaboratorios(id);
 	}
-	public boolean AgregarConsultaLab(int id, int idconsulta, int idreceta, String observacion) {
-		return ModeloConsultaLab.AgregarConsultaLaboratorio(id, idconsulta, idreceta, observacion);
+	public boolean AgregarConsultaLab(int id, int idconsulta, int idreceta, String otro) {
+		return ModeloConsultaLab.AgregarConsultaLaboratorio(id, idconsulta, idreceta, otro);
 	}
-	public boolean ActualizarConsultaLab(int id, int idconsulta, int idreceta, String observacion) {
-		return ModeloConsultaLab.ActualizarConsultaLaboratorios(id, idconsulta, idreceta, observacion);
+	public boolean ActualizarConsultaLab(int id, int idconsulta, int idreceta, String otro) {
+		return ModeloConsultaLab.ActualizarConsultaLaboratorios(id, idconsulta, idreceta, otro);
 	}
 	public boolean EliminarConsultaLab(int id) {
 		return ModeloConsultaLab.EliminarConsultaLaboratorios(id);

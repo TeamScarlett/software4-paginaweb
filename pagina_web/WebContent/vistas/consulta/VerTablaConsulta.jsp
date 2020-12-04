@@ -136,7 +136,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Nombre"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="add_idpaciente" required>
+									name="add_idconsulta" required>
 							</div>
 									
 							<div class="input-group mb-3">
@@ -145,7 +145,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Nombre"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="add_idpaciente" required>
+									name="add_paciente" required>
 							</div>
 							
 							<div class="input-group mb-3">
@@ -235,7 +235,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Nombre del paciente"
 									id="data_edit1" aria-label="Username" aria-describedby="basic-addon1"
-									name="edit_idpaciente" required>
+									name="edit_paciente" required>
 							</div>
 							
 							<div class="input-group mb-3">
@@ -331,7 +331,7 @@
 								</div>
 								<input type="text" readonly class="form-control" placeholder="Nombre del paciente"
 									id="data_del1" aria-label="Username" aria-describedby="basic-addon1"
-									name="del_idpaciente" required>
+									name="del_paciente" required>
 							</div>
 
 							

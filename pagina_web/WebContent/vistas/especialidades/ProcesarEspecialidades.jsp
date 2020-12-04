@@ -9,15 +9,19 @@ if(add != null){
 	out.println("add");
 	int add_id = Integer.valueOf(request.getParameter("add_id"));
 	String add_descripcion = request.getParameter("add_descripcion");
+	ModeloEspecialidades Modelo = new ModeloEspecialidades();
+	if(Modelo.AgregarEspecialidades(add_id, add_descripcion)){	
 	 response.sendRedirect("VerTablaEspecialidades.jsp");
+	}
 }
-
 
 
 String del = request.getParameter("del");
 if(del !=null){
 	out.println("del");
 	int del_id  = Integer.valueOf(request.getParameter("del_id"));
+	ModeloEspecialidades Modelo = new ModeloEspecialidades();
+
 	 response.sendRedirect("VerTablaEspecialidades.jsp");
 }
 
@@ -26,5 +30,8 @@ if(edit !=null){
 	out.println("edit");
 	int edit_id = Integer.valueOf(request.getParameter("edit_id"));
 	String edit_descripcion = request.getParameter("edit_descripcion");
-	 response.sendRedirect("VerTablaEspecialidades.jsp");
-}
+	
+	ModeloEspecialidades Modelo = new ModeloEspecialidades();
+
+		 response.sendRedirect("VerTablaEspecialidades.jsp");
+		}
