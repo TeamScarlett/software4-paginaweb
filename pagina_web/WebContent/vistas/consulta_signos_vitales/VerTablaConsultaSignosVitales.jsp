@@ -1,5 +1,5 @@
 <%@page
-	import="pkt_consulta_signos_vitales.Tabla_Consulta_signos_vitales,pkt_consulta_signos_vitales.Consulta_signos_vitales, java.util.LinkedList,utils.Rutas"%>
+	import="pkt_consulta_signos_vitales.* , java.util.LinkedList,utils.Rutas"%>
 
 <!DOCTYPE html>
 
@@ -65,17 +65,16 @@
 
 				<tbody>
 					<%
-						//SE CREA LA LISTA Y SE UTILIZA EL METODO getCitas PARA OBTENER LA LISTA DE CITAS
+			
 
 					LinkedList<Consulta_signos_vitales> ListaConsulta_signos_vitales = Tabla_Consulta_signos_vitales.getConsulta_signos_vitales();
 
 					for (int i = 0; i <ListaConsulta_signos_vitales.size(); i++) {
 
-						//MIENTRAS EXISTAN REGISTROS SE OBTENDRAN POR LA POSICION Y EN LA POSICION SE IMPRIMEN LOS ATRIBUTOS
-						// Y SE PUEDEN TENER INFINIDAD DE ATRIBUTOS Y SERAN DE LA POSICION i
 
-						out.println("<tr scope=\"row\"></th>");
-						out.println("<td id=\"idcitaedit\">" +ListaConsulta_signos_vitales.get(i).getId() + "</td>");
+
+						out.println("<tr>");
+						out.println("<td>" +ListaConsulta_signos_vitales.get(i).getId() + "</td>");
 						out.println("<td>" + ListaConsulta_signos_vitales.get(i).getIdconsulta() + "</td>");
 						out.println("<td>" + ListaConsulta_signos_vitales.get(i).getIdsigno_vital() + "</td>");
 						out.println("<td>" + ListaConsulta_signos_vitales.get(i).getValor() + "</td>");
@@ -132,7 +131,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Id"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="id" required="required">
+									name="add_id" required="required">
 									
 							</div>
 						
@@ -143,7 +142,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Id de Consulta"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="idconsulta" required="required">
+									name="add_idconsulta" required="required">
 									
 							</div>
 							
@@ -153,7 +152,7 @@
 								</div>
 								<input type="date" class="form-control" placeholder="Id de Recetas"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="idsigno_vital" required="required">
+									name="add_idsigno_vital" required="required">
 									
 							</div>
 							
@@ -163,7 +162,7 @@
 								</div>
 								<input type="date" class="form-control" placeholder="Otro"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="valor" required="required">								
+									name="add_valor" required="required">								
 							</div>
 										
 							
@@ -178,14 +177,6 @@
 							
 							<input type="hidden" id="add" name="add">
 							
-							<script>
-							function form_add(){
-								add.value= "add";
-						       sub_add.submit();
-
-							}
-						
-						</script>
 						</div>
 					</div>
 				</div>
@@ -209,28 +200,49 @@
 						</div>
 						<div class="modal-body">
 
-							<div class="form-group">
-								<label for="Id">Id</label> <input
-									readonly class="form-control-plaintext" id="form_consigvi_id" type="text" required>
-							</div>
-							<div class="form-group">
-								<label for="Idconsulta">Id Consulta</label> <input
-									id="form_consigvi_idconsulta" type="text" class="form-control" required>
-							</div>
-
-							<div class="form-group">
-								<label for="Idsigno_vital">Id Signo Vital</label> <input
-									id="form_consigvi_idsigno_vital" type="text" class="form-control" required>
-							</div>
-
-							<div class="form-group">
-								<label for="Valor">Valor</label> <input
-									id="form_consigvi_valor" type="text" class="form-control"
-									required>
-							</div>
-				
+							
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id</span>
 								</div>
-												
+								<input type="text" class="form-control" placeholder="Id"
+									id="data_edit0" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_id" required="required">
+									
+							</div>
+						
+						
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id Consulta</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Id de Consulta"
+									id="data_edit1" aria-label="Username" aria-describedby="basic-addon1"
+									name="add_idconsulta" required="required">
+									
+							</div>
+							
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id Signo Vital</span>
+								</div>
+								<input type="date" class="form-control" placeholder="Id de Recetas"
+									id="data_edit2" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_idsigno_vital" required="required">
+									
+							</div>
+							
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Valor</span>
+								</div>
+								<input type="date" class="form-control" placeholder="Otro"
+									id="data_edit3" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_valor" required="required">								
+							</div>
+							
+											
+							</div>	
 							<div>
 									
 
@@ -243,14 +255,6 @@
 								
 								<input type="hidden" id="edit" name="edit">
 								
-								<script>
-								function form_edit(){
-								edit.value= "edit";
-						       sub_edit.submit();
-
-								}
-						
-								</script>
 							</div>
 						</div>
 					</div>
@@ -278,18 +282,31 @@
 						<div class="modal-body">
 
 							
-								<div class="input-group mb-3">
+							<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Consulta Signos Vitales</span>
+									<span class="input-group-text" id="basic-addon1">Id</span>
 								</div>
-								
-								<div class="form-group">
-								<label for="Id">Id</label> <input
-									readonly class="form-control-plaintext" name="del_id" id="del_id" type="text" required>
+								<input type="text" class="form-control" placeholder="Id"
+									id="data_del0" aria-label="Username" aria-describedby="basic-addon1"
+									name="del_id" required="required">
+									
+							</div>
+						
+						
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id Consulta</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Id de Consulta"
+									id="data_del1" aria-label="Username" aria-describedby="basic-addon1"
+									name="del_idconsulta" required="required">
+									
 							</div>
 							
+							
 							</div>
-
+							
+							<div>
 								<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
@@ -297,18 +314,9 @@
 								<button type="button" id="btn" onclick="form_del();" class="btn btn-primary">Enviar</button>
 								
 							</div>
-						</div>
+						
 						<input type="hidden" id="del" name="del">
-						
-						<script>
-						function form_del(){
-						del.value= "del";
-						sub_del.submit();
-						   
-						    
-						}
-						
-						</script>
+					</div>
 					</div>
 				</div>
 			</div>
@@ -320,29 +328,8 @@
 		
 <%@ include file="../footer.jsp"%>
 
-<script>
 
-
-function selectRow(){
-    var rindex, table = document.getElementById("listado");
-    for(var i=1;i<table.rows.length;i++){
-        table.rows[i].onclick = function(){
-          rindex  = this.rowIndex;
-          console.log(rindex);
-          document.getElementById("form_consigvi_id").value = this.cells[0].innerHTML;
-          document.getElementById("form_consigvi_idconsulta").value = this.cells[1].innerHTML;
-          document.getElementById("form_consigvi_idsigno_vital").value = this.cells[2].innerHTML;
-          document.getElementById("form_consigvi_valor").value = this.cells[3].innerHTML;
-         
-          document.getElementById("del_id").value = this.cells[0].innerHTML;
-        };
-    }
-}
-
-selectRow();
-</script>
-
-<script src="http://localhost:8080/pagina_web/Main.js"></script>
+<script src="http://localhost:8080/pagina_web/JS/Main.js"></script>
   
 		<script src="<%=Rutas.JqueryURL%>"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

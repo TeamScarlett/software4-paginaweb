@@ -12,8 +12,8 @@ public class ModeloLab {
 	public boolean AgregarLaboratorio(int id,String descripcion) {
 		return ModeloLab.AgregarLaboratorio(id, descripcion);
 	}
-	public boolean ActualizarLaboratorio() {
-		return true;
+	public boolean ActualizarLaboratorio(int id,String descripcion) {
+		return ModeloLab.ActualizarLaboratorios(id, descripcion);
 	}
 	public boolean EliminarLaboratorio(int id) {
 		return ModeloLab.EliminarLaboratorios(id);

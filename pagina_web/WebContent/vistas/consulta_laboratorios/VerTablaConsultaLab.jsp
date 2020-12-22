@@ -65,17 +65,16 @@
 
 				<tbody>
 					<%
-						//SE CREA LA LISTA Y SE UTILIZA EL METODO getCitas PARA OBTENER LA LISTA DE CITAS
+						
 
 					LinkedList<Consulta_laboratorio> ListaConsulta_laboratorio = Tabla_Consulta_laboratorio.getConsulta_laboratorio();
 
 					for (int i = 0; i < ListaConsulta_laboratorio.size(); i++) {
 
-						//MIENTRAS EXISTAN REGISTROS SE OBTENDRAN POR LA POSICION Y EN LA POSICION SE IMPRIMEN LOS ATRIBUTOS
-						// Y SE PUEDEN TENER INFINIDAD DE ATRIBUTOS Y SERAN DE LA POSICION i
+						
 
-						out.println("<tr scope=\"row\"></th>");
-						out.println("<td id=\"idcitaedit\">" +ListaConsulta_laboratorio.get(i).getId() + "</td>");
+						out.println("<tr>");
+						out.println("<td>" +ListaConsulta_laboratorio.get(i).getId() + "</td>");
 						out.println("<td>" + ListaConsulta_laboratorio.get(i).getIdconsulta() + "</td>");
 						out.println("<td>" + ListaConsulta_laboratorio.get(i).getIdreceta() + "</td>");
 						out.println("<td>" + ListaConsulta_laboratorio.get(i).getOtro() + "</td>");
@@ -341,7 +340,7 @@
 
 
 
-<script src="http://localhost:8080/pagina_web/Main.js"></script>
+<script src="http://localhost:8080/pagina_web/JS/Main.js"></script>
   
 		<script src="<%=Rutas.JqueryURL%>"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

@@ -185,7 +185,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Id</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Id"
+								<input type="text" readonly class="form-control" placeholder="Id"
 									id="data_edit0" aria-label="Username" aria-describedby="basic-addon1"
 									name="edit_id" required="required">
 									
@@ -245,7 +245,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Id</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Id"
+								<input type="text" readonly class="form-control" placeholder="Id"
 									id="data_del0" aria-label="Username" aria-describedby="basic-addon1"
 									name="del_id" required="required">
 									
@@ -256,7 +256,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Descripcion</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Descripcion"
+								<input type="text" readonly class="form-control" placeholder="Descripcion"
 									id="data_del1" aria-label="Username" aria-describedby="basic-addon1"
 									name="del_descripcion" required="required">
 									
@@ -288,7 +288,7 @@
 <%@ include file="../footer.jsp"%>
 
 
-<script src="http://localhost:8080/pagina_web/Main.js"></script>
+<script src="http://localhost:8080/pagina_web/JS/Main.js"></script>
   
 		<script src="<%=Rutas.JqueryURL%>"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

@@ -128,6 +128,9 @@
 			
 			</table>
 			
+			<a class="btn btn-primary" href="http://localhost:8080/pagina_web/vistas/usuarios_especialidades/VerTablaUsuarios_Esp.jsp" role="button">Administrar tipos de usuarios</a>
+			<a class="btn btn-primary" href="http://localhost:8080/pagina_web/vistas/estados/VerTablaEstados.jsphttp://localhost:8080/pagina_web/vistas/estados/VerTablaEstados.jsp" role="button">Administrar estados</a>
+			
 
 
 	</div>
@@ -361,10 +364,16 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">ID estado</span>
 								</div>
-								<input type="text" class="form-control" placeholder=""
-									id="data_edit9" aria-label="Username" aria-describedby="basic-addon1"
-									name="edit_idestado" required>
+							<div class="btn-group btn-group-toggle" data-toggle="buttons">
+							
+								<label class="btn btn-secondary active">
+								 <input type="radio" name="options" id="option1" checked>
+									Active
+								</label>
+								
 							</div>
+
+						</div>
 									
 						
 												
@@ -460,7 +469,7 @@
 		
 <%@ include file="../footer.jsp"%>
 
-<script src="http://localhost:8080/pagina_web/Main.js"></script>
+<script src="http://localhost:8080/pagina_web/JS/Main.js"></script>
 
 		<script src="<%=Rutas.JqueryURL%>"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

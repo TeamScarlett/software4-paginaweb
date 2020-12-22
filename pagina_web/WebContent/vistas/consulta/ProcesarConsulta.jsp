@@ -1,10 +1,12 @@
 
 <%@page
 	import="Modelo.ModeloConsulta"%>
+	<!DOCTYPE html>
+
 
 <%
-String add =request.getParameter("add");
 
+String add =request.getParameter("add");
 if(add != null){
 	out.println("add");
 	String add_paciente= request.getParameter("add_paciente");
@@ -12,6 +14,7 @@ if(add != null){
 	String add_fecha = request.getParameter("add_fecha");
 	String add_medico = request.getParameter("add_medico");
 	String add_observacion = request.getParameter("add_observacion");
+	out.println(add_fecha);
 	ModeloConsulta Modelo = new ModeloConsulta();
 	if(Modelo.AgregarConsulta(add_idconsulta, add_paciente, add_fecha, add_medico, add_observacion)){	
 	 response.sendRedirect("VerTablaConsulta.jsp");
@@ -20,7 +23,7 @@ if(add != null){
 
 String del = request.getParameter("del");
 if(del !=null){
-	out.println("del");
+	
 	int del_idconsulta = Integer.valueOf(request.getParameter("del_idconsulta"));
 	ModeloConsulta Modelo = new ModeloConsulta();
 	if(Modelo.EliminarConsulta(del_idconsulta)){
@@ -30,8 +33,9 @@ if(del !=null){
 
 
 String edit = request.getParameter("edit");
+
 if(edit !=null){
-	out.println("edit");
+	
 	String edit_paciente= request.getParameter("edit_paciente");
 	int edit_idconsulta = Integer.valueOf(request.getParameter("edit_idconsulta"));
 	String edit_fecha = request.getParameter("edit_fecha");
@@ -42,4 +46,6 @@ if(edit !=null){
 	 response.sendRedirect("VerTablaConsulta.jsp");
 	}
 }
+
+
 %>

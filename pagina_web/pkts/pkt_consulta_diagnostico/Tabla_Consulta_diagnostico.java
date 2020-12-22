@@ -122,6 +122,40 @@ public boolean ActualizarConsultaDiagnosticos(int id, int idconsulta, int iddiag
 		return false;
 	}
 }
+
+public static Consulta_diagnostico ConsultarDatos(int id) {
+	
+	Consulta_diagnostico consulta_diag = new Consulta_diagnostico();
+	
+	Connection conexion = EnlacetoDB();
+
+	Statement statement = null;
+
+
+	String sql = "SELECT consulta_diagnostico.id,consulta_diagnostico.idconsulta,diagnosticos.descripcion,consulta_diagnostico.observacion FROM consulta_diagnostico INNER JOIN diagnosticos ON consulta_diagnostico.iddiagnostico=diagnosticos.id where consulta_diagnostico.idconsulta = '"+id+"'";
+
+
+	try {
+		
+		statement = conexion.createStatement();
+		
+		ResultSet rs = statement.executeQuery(sql);
+		while (rs.next()) {
+			
+			consulta_diag.setId(rs.getInt(1));
+			consulta_diag.setIdconsulta(rs.getInt(2));
+			consulta_diag.setIddiagnostico(rs.getString(3));
+			consulta_diag.setObservacion(rs.getString(4));
+
+		}
+
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+		
+	}
+	return consulta_diag;
+}
 } 
 	
 	

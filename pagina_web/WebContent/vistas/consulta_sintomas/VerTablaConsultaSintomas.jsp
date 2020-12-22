@@ -37,8 +37,8 @@
 							<h2>Consulta Sintomas</h2>
 						</div>
 						<div class="col-sm-6">
-							<a href="#añadirConsultaSignosVitales" class="btn btn-success"
-								data-toggle="modal" data-target="#form-consint"><i class="material-icons">&#xE147;</i> <span>Agregar</span></a>
+							<a href="#añadirRegistro" class="btn btn-success"
+								data-toggle="modal" data-target="#form-add"><i class="material-icons">&#xE147;</i> <span>Agregar</span></a>
 	
 						</div>
 					</div>
@@ -75,7 +75,7 @@
 						// Y SE PUEDEN TENER INFINIDAD DE ATRIBUTOS Y SERAN DE LA POSICION i
 
 						out.println("<tr scope=\"row\"></th>");
-						out.println("<td id=\"idcitaedit\">" +ListaConsulta_sintomas.get(i).getId() + "</td>");
+						out.println("<td>" + ListaConsulta_sintomas.get(i).getId() + "</td>");
 						out.println("<td>" + ListaConsulta_sintomas.get(i).getIdconsulta() + "</td>");
 						out.println("<td>" + ListaConsulta_sintomas.get(i).getIdsintoma() + "</td>");
 						out.println("<td>" + ListaConsulta_sintomas.get(i).getObservacion() + "</td>");
@@ -151,7 +151,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Id Sintoma</span>
 								</div>
-								<input type="date" class="form-control" placeholder="Id de Recetas"
+								<input type="text" class="form-control" placeholder="Id de Recetas"
 									aria-label="Username" aria-describedby="basic-addon1"
 									name="add_idsintoma" required="required">
 									
@@ -161,7 +161,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Observacion</span>
 								</div>
-								<input type="date" class="form-control" placeholder="Otro"
+								<input type="text" class="form-control" placeholder="Otro"
 									aria-label="Username" aria-describedby="basic-addon1"
 									name="add_observacion" required="required">								
 							</div>
@@ -200,27 +200,47 @@
 							<button class="close" type="button" data-dismiss="modal">x</button>
 						</div>
 						<div class="modal-body">
-
-							<div class="form-group">
-								<label for="Id">Id</label> <input
-									readonly class="form-control-plaintext" id="form_consint_id" type="text" required>
+							
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Id"
+									id="data_edit0" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_id" required="required">
+									
 							</div>
-							<div class="form-group">
-								<label for="Idconsulta">Id Consulta</label> <input
-									id="form_consint_idconsulta" type="text" class="form-control" required>
+						
+						
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id Consulta</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Id de Consulta"
+									id="data_edit1" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_idconsulta" required="required">
+									
 							</div>
-
-							<div class="form-group">
-								<label for="Idsintoma">Id Signo Vital</label> <input
-									id="form_consint_idsintoma" type="text" class="form-control" required>
+							
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id Sintoma</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Id de Recetas"
+									id="data_edit2" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_idsintoma" required="required">
+									
 							</div>
-
-							<div class="form-group">
-								<label for="Observacion">Observacion</label> <input
-									id="form_consint_observacion" type="text" class="form-control"
-									required>
+							
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Observacion</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Otro"
+									id="data_edit3" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_observacion" required="required">								
 							</div>
-				
+											
 								</div>
 												
 							<div>
@@ -260,20 +280,31 @@
 							<button class="close" type="button" data-dismiss="modal">x</button>
 						</div>
 						<div class="modal-body">
-
-							
-								<div class="input-group mb-3">
+						
+						<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Consulta Sintomas</span>
+									<span class="input-group-text" id="basic-addon1">Id</span>
 								</div>
-								
-								<div class="form-group">
-								<label for="Id">Id</label> <input
-									readonly class="form-control-plaintext" name="del_id" id="del_id" type="text" required>
+								<input type="text" class="form-control" placeholder="Id"
+									id="data_del0" aria-label="Username" aria-describedby="basic-addon1"
+									name="del_id" required="required">
+									
+							</div>
+						
+						
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id Consulta</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Id de Consulta"
+									id="data_del1" aria-label="Username" aria-describedby="basic-addon1"
+									name="del_idconsulta" required="required">
+									
 							</div>
 							
-							</div>
-
+								
+								</div>
+								<div>
 								<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
@@ -281,7 +312,8 @@
 								<button type="button" id="btn" onclick="form_del();" class="btn btn-primary">Enviar</button>
 								
 							</div>
-						</div>
+							</div>
+						
 						<input type="hidden" id="del" name="del">
 						
 					</div>
@@ -295,10 +327,9 @@
 		
 <%@ include file="../footer.jsp"%>
 
-<script>
 
 
-<script src="http://localhost:8080/pagina_web/Main.js"></script>
+<script src="http://localhost:8080/pagina_web/JS/Main.js"></script>
   
 		<script src="<%=Rutas.JqueryURL%>"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

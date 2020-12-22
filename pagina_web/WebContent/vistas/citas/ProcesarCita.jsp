@@ -1,13 +1,13 @@
 
 <%@page
-	import="Modelo.ModeloCitas"%>
+	import="Modelo.ModeloCitas, Modelo.ModeloConsulta"%>
 
-<%
-String add =request.getParameter("add");
-
+<% String add=request.getParameter("add");
+ModeloCitas modelo = new ModeloCitas();
 if(add != null){
-	out.println("add");
-	int add_idcita= Integer.valueOf(request.getParameter("add_paciente"));
+	
+	int add_idcita = Integer.valueOf(request.getParameter("add_idcita"));
+
 	String add_idpaciente = request.getParameter("add_idpaciente");
 	String add_fecha = request.getParameter("add_fecha");
 	String add_fechaconsulta = request.getParameter("add_fechaconsulta");
@@ -15,8 +15,11 @@ if(add != null){
 	String add_idmedico = request.getParameter("add_idmedico");
 	String add_observacion = request.getParameter("add_observacion");
 	int add_idusuario = Integer.valueOf(request.getParameter("add_idusuario"));
+
 	ModeloCitas Modelo = new ModeloCitas();
-	if(Modelo.AgregarCita(add_idcita, add_idpaciente, add_fecha, add_fechaconsulta,add_idespecialidad, add_idmedico, add_observacion,add_idusuario)){	
+	if(Modelo.AgregarCita(add_idcita, add_idpaciente, add_fecha, add_fechaconsulta,add_idespecialidad, add_idmedico, add_observacion,add_idusuario)){
+		ModeloConsulta nuevaConsulta = new ModeloConsulta();
+		nuevaConsulta.AgregarConsulta(add_idcita,add_idpaciente,add_fechaconsulta, add_idmedico, add_observacion);
 	 response.sendRedirect("VerTablaCita.jsp");
 	}
 }
@@ -39,7 +42,7 @@ if(edit !=null){
 	String edit_idpaciente = request.getParameter("edit_idpaciente");
 	String edit_fecha = request.getParameter("edit_fecha");
 	String edit_fechaconsulta = request.getParameter("edit_fechaconsulta");
-	int edit_idespecialidad = Integer.valueOf(request.getParameter("edit_idespecialidad"));
+	String edit_idespecialidad = request.getParameter("edit_idespecialidad");
 	String edit_idmedico = request.getParameter("edit_idmedico");
 	String edit_observacion = request.getParameter("edit_observacion");
 	int edit_idusuario = Integer.valueOf(request.getParameter("edit_idusuario"));
@@ -49,3 +52,9 @@ if(edit !=null){
 	}
 }
 %>
+
+	
+
+
+	
+

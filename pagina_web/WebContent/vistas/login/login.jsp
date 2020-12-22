@@ -9,6 +9,9 @@
 <head>
 
 <meta charset="ISO-8859-1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet"
 	href="<%=Rutas.BootstrapURL%>"
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"

@@ -1,9 +1,6 @@
 
 <%@page
-	import="pkt_login.*"%>
-	<%@page
-	import="pkt_consultas.Tabla_Consultas, pkt_consultas.Consultas, java.util.LinkedList,utils.Rutas"%>
-
+	import="pkt_login.* ,utils.Rutas"%>
 
 	
 	<%
@@ -12,7 +9,8 @@
 	Tabla_login loguear = new Tabla_login();
 	if(loguear.VerificarUsuario(user, pass)){
 		session.setAttribute("user", user);
-		response.sendRedirect("http://localhost:8080/pagina_web/vistas/citas/VerTablaCita.jsp");
+			
+		response.sendRedirect("http://localhost:8080/pagina_web/vistas/index.jsp");
 	}else{
 		
 		response.sendRedirect("http://localhost:8080/pagina_web/vistas/login/login.jsp");

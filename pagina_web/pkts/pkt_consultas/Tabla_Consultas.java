@@ -47,6 +47,66 @@ public class Tabla_Consultas extends pkt_conexion.enlace{
 		return ListaConsultas;
 	}
 	
+	public static LinkedList<Consultas> ListarConsultas(int opcion) {
+		
+		LinkedList<Consultas> ListaConsultas = new LinkedList<Consultas>();
+		 
+		
+		Connection conexion = EnlacetoDB();
+		Statement statement = null;
+		
+		String sql="select * from consulta order by";
+		
+		switch(opcion){
+			case 1:
+				sql+= " fecha";
+			break;
+			
+			case 2:
+				sql+= " ";
+				break;
+				
+			case 3:
+				sql+= " medico";
+				break;
+				
+			case 4:
+				sql+= " fecha";
+				break;
+		}
+	
+		try {
+			
+			statement = conexion.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			
+			while(rs.next()) {
+			Consultas consulta = new Consultas();
+			consulta.setIdconsulta(rs.getInt(1));
+			consulta.setPaciente(rs.getString(2));
+			consulta.setFecha(rs.getDate(3).toString());
+			consulta.setMedico(rs.getString(4));
+			consulta.setObservacion(rs.getString(5));
+			
+			
+			ListaConsultas.add(consulta);
+			}
+			
+			rs.close();
+			statement.close();
+			conexion.close();
+		} 
+		
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return ListaConsultas;
+	}
+	
+	
+	
 	public boolean VerificarConsulta(int idconsulta) {
 		
 
@@ -96,7 +156,7 @@ public class Tabla_Consultas extends pkt_conexion.enlace{
 
 		Statement statement = null;
 
-		String sql = "UPDATE `consulta` SET `idconsulta`='"+idconsulta+"',`paciente`='"+paciente+"',`fecha`='"+fecha+"',`idmedico`='"+medico+"',`observacion`='"+observacion+"', WHERE idconsulta = '"+idconsulta+"'";
+		String sql = "UPDATE `consulta` SET `paciente`='"+paciente+"',`fecha`='"+fecha+"',`medico`='"+medico+"',`observacion`='"+observacion+"' WHERE idconsulta = '"+idconsulta+"'";
 	
 
 		try {
@@ -126,6 +186,32 @@ public class Tabla_Consultas extends pkt_conexion.enlace{
 		}
 	
 }
+	
+	public static Consultas obtenerDatos(int id){
+		Consultas consulta = new Consultas();
+		Connection conexion = EnlacetoDB();
+		Statement statement = null;
+		
+		String sql="Select * from consulta where idconsulta='"+id+"'";
+	
+		try {
+			
+			statement = conexion.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			
+			while(rs.next()) {
+			
+			consulta.setIdconsulta(rs.getInt(1));
+			consulta.setPaciente(rs.getString(2));
+			consulta.setFecha(rs.getDate(3).toString());
+			consulta.setMedico(rs.getString(4));
+			consulta.setObservacion(rs.getString(5));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return consulta;
+	}
 
 
 }

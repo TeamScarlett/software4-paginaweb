@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 
+import pkt_consulta_diagnostico.Consulta_diagnostico;
+
 public class Tabla_Consulta_laboratorio extends pkt_conexion.enlace {
 
 	public static LinkedList<Consulta_laboratorio> getConsulta_laboratorio() {
@@ -116,7 +118,43 @@ public class Tabla_Consulta_laboratorio extends pkt_conexion.enlace {
 		}
 	}
 	
+	public static Consulta_laboratorio ConsultarDatos(int id) {
+		
+		Consulta_laboratorio consulta_lab = new Consulta_laboratorio();
+		
+		Connection conexion = EnlacetoDB();
+
+		Statement statement = null;
+
+
+		String sql = "SELECT consulta_laboratorios.id,consulta_laboratorios.idconsulta,recetas.descripcion,consulta_laboratorios.otro FROM consulta_laboratorios INNER JOIN recetas on consulta_laboratorios.idreceta = recetas.id where consulta_laboratorios.idconsulta = '"+id+"'";
+
+
+		try {
+			
+			statement = conexion.createStatement();
+			
+			ResultSet rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				consulta_lab.setId(rs.getInt(1));
+				consulta_lab.setIdconsulta(rs.getInt(2));
+				consulta_lab.setIdreceta(rs.getString(3));
+				consulta_lab.setOtro(rs.getString(4));
+				
+			}
+
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}
+		return consulta_lab;
+	}
+		
+		
 }
+	
+
 
 
 

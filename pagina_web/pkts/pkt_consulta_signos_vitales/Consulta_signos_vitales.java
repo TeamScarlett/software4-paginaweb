@@ -5,7 +5,7 @@ public class Consulta_signos_vitales {
 	private int id;
 	private int idconsulta;
 	private String idsigno_vital;
-	private float valor;
+	private String valor;
 	
 	public int getId() {
 		return id;
@@ -25,10 +25,10 @@ public class Consulta_signos_vitales {
 	public void setIdsigno_vital(String idsigno_vital) {
 		this.idsigno_vital = idsigno_vital;
 	}
-	public float getValor() {
+	public String getValor() {
 		return valor;
 	}
-	public void setValor(float valor) {
+	public void setValor(String valor) {
 		this.valor = valor;
 	}
 

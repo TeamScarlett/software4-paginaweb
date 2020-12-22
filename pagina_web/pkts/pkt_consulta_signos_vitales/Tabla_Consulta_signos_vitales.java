@@ -27,7 +27,7 @@ public class Tabla_Consulta_signos_vitales extends pkt_conexion.enlace {
 				consulta_signos_vitales.setId(rs.getInt(1));
 				consulta_signos_vitales.setIdconsulta(rs.getInt(2));
 				consulta_signos_vitales.setIdsigno_vital(rs.getString(3));
-				consulta_signos_vitales.setValor(rs.getFloat(4));
+				consulta_signos_vitales.setValor(rs.getString(4));
 
 				ListaConsulta_signos_vitales.add(consulta_signos_vitales);
 			}
@@ -115,4 +115,30 @@ public class Tabla_Consulta_signos_vitales extends pkt_conexion.enlace {
 		}
 	}
 	
+	public static Consulta_signos_vitales ConsultarDatos(int id) {
+		Consulta_signos_vitales consulta_signos_vit = new Consulta_signos_vitales();
+		Connection conexion = EnlacetoDB();
+		Statement statement = null;
+		String SQL = "SELECT consulta_signos_vitales.id,consulta_signos_vitales.idconsulta,signos_vitales.descripcion,consulta_signos_vitales.valor FROM consulta_signos_vitales\r\n"
+				+ "INNER JOIN signos_vitales ON consulta_signos_vitales.idsigno_vital = signos_vitales.id where consulta_signos_vitales.idconsulta='"+id+"'";
+
+		try {
+
+			statement = conexion.createStatement();
+			ResultSet rs = statement.executeQuery(SQL);
+
+			while (rs.next()) {
+				
+				consulta_signos_vit.setId(rs.getInt(1));
+				consulta_signos_vit.setIdconsulta(rs.getInt(2));
+				consulta_signos_vit.setIdsigno_vital(rs.getString(3));
+				consulta_signos_vit.setValor(rs.getString(4));
+			}
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+	return consulta_signos_vit;
+	
+}
 }

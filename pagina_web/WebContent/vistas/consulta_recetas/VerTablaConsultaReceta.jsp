@@ -72,8 +72,8 @@
 					for (int i = 0; i < ListaConsulta_recetas.size(); i++) {
 
 						
-						out.println("<tr scope=\"row\"></th>");
-						out.println("<td id=\"idcitaedit\">" +ListaConsulta_recetas.get(i).getId() + "</td>");
+						out.println("<tr>");
+						out.println("<td>" +ListaConsulta_recetas.get(i).getId() + "</td>");
 						out.println("<td>" + ListaConsulta_recetas.get(i).getIdconsulta() + "</td>");
 						out.println("<td>" + ListaConsulta_recetas.get(i).getIdrecetas() + "</td>");
 						out.println("<td>" + ListaConsulta_recetas.get(i).getOtro() + "</td>");
@@ -130,7 +130,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Id"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="id" required="required">
+									name="add_id" required="required">
 									
 							</div>
 						
@@ -141,7 +141,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Id de Consulta"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="idconsulta" required="required">
+									name="add_idconsulta" required="required">
 									
 							</div>
 							
@@ -149,9 +149,9 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Id Recetas</span>
 								</div>
-								<input type="date" class="form-control" placeholder="Id de Recetas"
+								<input type="text" class="form-control" placeholder="Id de Recetas"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="idrecetas" required="required">
+									name="add_idrecetas" required="required">
 									
 							</div>
 							
@@ -159,32 +159,35 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Otro</span>
 								</div>
-								<input type="date" class="form-control" placeholder="Otro"
+								<input type="text" class="form-control" placeholder="Otro"
 									aria-label="Username" aria-describedby="basic-addon1"
-									name="otro" required="required">								
+									name="add_otro" required="required">								
 							</div>
-										
 							
+							
+							
+							
+										
+							</div>
+							
+							<div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Cancelar</button>
 															
 
 								<button type="button"   onclick="form_add();" class="btn btn-primary">Enviar</button>
+								
+								<input type="hidden" id="add" name="add">
 
 							</div>
+							</div>
 							
-							<input type="hidden" id="add" name="add">
 							
-							<script>
-							function form_add(){
-								add.value= "add";
-						       sub_add.submit();
-
-							}
+							
+							
+							
 						
-						</script>
-						</div>
 					</div>
 				</div>
 		</div>
@@ -207,25 +210,49 @@
 						</div>
 						<div class="modal-body">
 
-							<div class="form-group">
-								<label for="Id">Id</label> <input
-									readonly class="form-control-plaintext" id="form_consrec_id" type="text" required>
+							
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Id"
+									id="data_edit0" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_id" required="required">
+									
 							</div>
-							<div class="form-group">
-								<label for="Idconsulta">Id Consulta</label> <input
-									id="form_consrec_idconsulta" type="text" class="form-control" required>
+						
+						
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id Consulta</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Id de Consulta"
+									id="data_edit1" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_idconsulta" required="required">
+									
 							</div>
-
-							<div class="form-group">
-								<label for="Idrecetas">Id Recetas</label> <input
-									id="form_consrec_idrecetas" type="text" class="form-control" required>
+							
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id Recetas</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Id de Recetas"
+									id="data_edit2" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_idrecetas" required="required">
+									
 							</div>
-
-							<div class="form-group">
-								<label for="Otro">Otro</label> <input
-									id="form_consrec_otro" type="text" class="form-control"
-									required>
+							
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Otro</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Otro"
+									id="data_edit3" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_otro" required="required">								
 							</div>
+							
+							
+							
 				
 								</div>
 												
@@ -240,15 +267,7 @@
 								
 								
 								<input type="hidden" id="edit" name="edit">
-								
-								<script>
-								function form_edit(){
-								edit.value= "edit";
-						       sub_edit.submit();
-
-								}
-						
-								</script>
+					
 							</div>
 						</div>
 					</div>
@@ -275,18 +294,32 @@
 						</div>
 						<div class="modal-body">
 
-							
-								<div class="input-group mb-3">
+							<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Consulta Recetas</span>
+									<span class="input-group-text" id="basic-addon1">Id</span>
 								</div>
-								
-								<div class="form-group">
-								<label for="Id">Id</label> <input
-									readonly class="form-control-plaintext" name="del_id" id="del_id" type="text" required>
+								<input type="text" class="form-control" placeholder="Id"
+									id="data_del0" aria-label="Username" aria-describedby="basic-addon1"
+									name="del_id" required="required">
+									
+							</div>
+						
+						
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Id Consulta</span>
+								</div>
+								<input type="text" class="form-control" placeholder="Id de Consulta"
+									id="data_del1" aria-label="Username" aria-describedby="basic-addon1"
+									name="del_idconsulta" required="required">
+									
 							</div>
 							
-							</div>
+							
+							
+							
+							</div>						
+							<div>
 
 								<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
@@ -295,18 +328,11 @@
 								<button type="button" id="btn" onclick="form_del();" class="btn btn-primary">Enviar</button>
 								
 							</div>
-						</div>
+						
 						<input type="hidden" id="del" name="del">
+						</div>
 						
-						<script>
-						function form_del(){
-						del.value= "del";
-						sub_del.submit();
-						   
-						    
-						}
-						
-						</script>
+					
 					</div>
 				</div>
 			</div>
@@ -318,29 +344,8 @@
 		
 <%@ include file="../footer.jsp"%>
 
-<script>
 
-
-function selectRow(){
-    var rindex, table = document.getElementById("listado");
-    for(var i=1;i<table.rows.length;i++){
-        table.rows[i].onclick = function(){
-          rindex  = this.rowIndex;
-          console.log(rindex);
-          document.getElementById("form_consrec_id").value = this.cells[0].innerHTML;
-          document.getElementById("form_consrec_idconsulta").value = this.cells[1].innerHTML;
-          document.getElementById("form_consrec_idrecetas").value = this.cells[2].innerHTML;
-          document.getElementById("form_consrec_otro").value = this.cells[3].innerHTML;
-         
-          document.getElementById("del_id").value = this.cells[0].innerHTML;
-        };
-    }
-}
-
-selectRow();
-</script>
-
-<script src="http://localhost:8080/pagina_web/Main.js"></script>
+<script src="http://localhost:8080/pagina_web/JS/Main.js"></script>
   
 		<script src="<%=Rutas.JqueryURL%>"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

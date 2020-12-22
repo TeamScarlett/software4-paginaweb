@@ -17,4 +17,8 @@ public class ModeloPacientes {
 		public boolean EliminarPaciente(int id) {
 			return ModeloPacientes.VerificarPacientes(id);
 		}
+		
+		public boolean ActualizarPaciente(int id, String nombre, String apellido, String cedula,String celular,String direccion,String email) {
+			return ModeloPacientes.ActualizarPacientes(id, nombre, apellido, cedula, celular, direccion, email);
+		}
 }

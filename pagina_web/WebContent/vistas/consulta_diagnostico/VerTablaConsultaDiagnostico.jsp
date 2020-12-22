@@ -26,25 +26,10 @@
 	<%@ include file="../header.jsp"%>
 
 	<div class="container fluid" id="form_contenedor">
-		<div class="card text-center">
+		
+							
 
-
-
-			<div class="table-wrapper">
-				<div class="table-title">
-					<div class="row">
-						<div class="col-sm-6">
-							<h2>Citas medicas</h2>
-						</div>
-						<div class="col-sm-6">
-							<a href="#añadirRegistro" class="btn btn-success"
-								data-toggle="modal" data-target="#form-add"><i class="material-icons">&#xE147;</i> <span>Agregar</span></a>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+						<h2 id="titulo_tabla">Tabla Consulta Diagnostico</h2>
 
 
 
@@ -65,17 +50,15 @@
 
 				<tbody>
 					<%
-						//SE CREA LA LISTA Y SE UTILIZA EL METODO getCitas PARA OBTENER LA LISTA DE CITAS
-
+					
 					LinkedList<Consulta_diagnostico> ListaConsulta_diagnostico = Tabla_Consulta_diagnostico.getConsulta_diagnostico();
 
 					for (int i = 0; i < ListaConsulta_diagnostico.size(); i++) {
 
-						//MIENTRAS EXISTAN REGISTROS SE OBTENDRAN POR LA POSICION Y EN LA POSICION SE IMPRIMEN LOS ATRIBUTOS
-						// Y SE PUEDEN TENER INFINIDAD DE ATRIBUTOS Y SERAN DE LA POSICION i
+						
 
-						out.println("<tr scope=\"row\"></th>");
-						out.println("<td id=\"idcitaedit\">" +ListaConsulta_diagnostico.get(i).getId() + "</td>");
+						out.println("<tr>");
+						out.println("<td>" +ListaConsulta_diagnostico.get(i).getId() + "</td>");
 						out.println("<td>" + ListaConsulta_diagnostico.get(i).getIdconsulta() + "</td>");
 						out.println("<td>" + ListaConsulta_diagnostico.get(i).getIddiagnostico() + "</td>");
 						out.println("<td>" + ListaConsulta_diagnostico.get(i).getObservacion() + "</td>");
@@ -112,6 +95,11 @@
 				</tbody>
 			
 			</table>
+			
+			<div>
+			<a href="#añadirRegistro" class="btn btn-success"
+								data-toggle="modal" data-target="#form-add"><i class="material-icons">&#xE147;</i> <span>Agregar</span></a>
+								</div>
 			<%--#########################AGREGAR FORMULARIO############################################## --%>
 <form action="ProcesarConsultaDiagnostico.jsp" method="post" name="sub_add">
 		<div class="modal" id="form-add">

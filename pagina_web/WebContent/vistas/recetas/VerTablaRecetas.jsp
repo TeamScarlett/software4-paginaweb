@@ -186,9 +186,9 @@
 						
 						<div class="input-group mb-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">ID de Receta</span>
+									<span  class="input-group-text" id="basic-addon1">ID de Receta</span>
 								</div>
-								<input type="text" class="form-control" placeholder="Codigo de la receta"
+								<input type="text" readonly class="form-control" placeholder="Codigo de la receta"
 									id="data_edit0" aria-label="Username" aria-describedby="basic-addon1"
 									name="edit_receta" required>
 							</div>
@@ -199,7 +199,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Descripcion</span>
 								</div>
-								<textarea  class="form-control" placeholder="Descripcion de la receta"
+								<textarea   class="form-control" placeholder="Descripcion"
 									placeholder="Explicación breve del medicamento" id="data_edit1"  aria-label="Username" aria-describedby="basic-addon1"
 									name="edit_observacion" required> </textarea>
 									
@@ -256,8 +256,8 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">ID de Receta</span>
 								</div>
-								<input type="text" class="form-control" placeholder="# de Consulta"
-									id="data_del0" readonly aria-label="Username" aria-describedby="basic-addon1"
+								<input type="text" readonly class="form-control" placeholder="Codigo de la receta"
+									id="data_del0" aria-label="Username" aria-describedby="basic-addon1"
 									name="del_id" required>
 							</div>
 
@@ -267,7 +267,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">Descripcion</span>
 								</div>
-								<input type="text" readonly class="form-control" placeholder="Nombre del paciente"
+								<input type="text" readonly class="form-control" placeholder="Descripcion"
 									id="data_del1" aria-label="Username" aria-describedby="basic-addon1"
 									name="del_descripcion" required>
 							</div>
@@ -298,7 +298,7 @@
 		
 <%@ include file="../footer.jsp"%>
 
-<script src="http://localhost:8080/pagina_web/Main.js"></script>
+<script src="http://localhost:8080/pagina_web/JS/Main.js"></script>
 
 		<script src="<%=Rutas.JqueryURL%>"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

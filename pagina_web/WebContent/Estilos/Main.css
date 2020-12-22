@@ -1,18 +1,47 @@
+/*PROPIEDADES DE LA PAGINA*/
+
 *{
 	margin: 0;
 	font-family: 'Inter', sans-serif;
+	font-size: 18px;
 	
 }
+body{
+	background-image:url('http://localhost:8080/pagina_web/recursos/fondoclinica.jpg');
+	background-position: center;
+	height: 750px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
-.h2.col-sm-6{
+
+
+
+/*PROPIEDADES DE LAS TABLAS */
+#titulo_tabla{
+	
+	margin: 100px 0px 25px 5px;
 	text-align: center;
-}
-.span.form-control{
-	width:30px;
-	height:30px;
 	
-
 }
+#agregarRegistro{
+	
+	margin:0px 25px 100px 500px;
+}
+
+#listado{
+	
+	border-radius: 25px;
+}
+th tr thead{
+	border:1px;
+}
+
+
+
+
+
+/*#################################### MODAL ##############################################*/
 
 .input.form-control{
 	width:30px;	
@@ -20,7 +49,7 @@
 	
 }
 .modal-body{
-	background-color: red;
+	background-color: white ;
 }
 .modal-title{
 	text-align: center;

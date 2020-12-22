@@ -201,7 +201,16 @@
 								<input type="text" class="form-control" placeholder="Email @"
 									aria-label="Username" aria-describedby="basic-addon1"
 									name="add_email" required="required">								
-							</div>		
+							</div>	
+								<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Contraseña</span>
+								</div>
+								<input type="password" class="form-control" placeholder="Contraseña"
+									aria-label="Username" aria-describedby="basic-addon1"
+									name="add_pass" required="required">								
+							</div>	
+								
 							<div>				
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
@@ -286,7 +295,7 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Direccion"
 									id="data_edit5" aria-label="Username" aria-describedby="basic-addon1"
-									name="add_direccion" required="required">								
+									name="edit_direccion" required="required">								
 							</div>							
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
@@ -294,8 +303,16 @@
 								</div>
 								<input type="text" class="form-control" placeholder="Email @"
 									id="data_edit6" aria-label="Username" aria-describedby="basic-addon1"
-									name="add_email" required="required">								
-							</div>		
+									name="edit_email" required="required">								
+							</div>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">Contraseña</span>
+								</div>
+								<input type="password" class="form-control" placeholder="Contraseña"
+									id="data_edit7" aria-label="Username" aria-describedby="basic-addon1"
+									name="edit_pass" required="required">								
+							</div>			
 							
 
 													
@@ -341,7 +358,7 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text" id="basic-addon1">Id</span>
 							</div>
-							<input type="text" class="form-control" placeholder="# paciente"
+							<input type="text" readonly class="form-control" placeholder="# paciente"
 								id="data_del0" aria-label="Username"
 								aria-describedby="basic-addon1" name="del_id"
 								required="required">
